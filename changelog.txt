@@ -1,0 +1,13 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.9.1
+  Minor Features:
+    - Oh yeah an icon
+
+---------------------------------------------------------------------------------------------------
+Version: 0.9.0
+  Major Features:
+    - Charcoal via wood pyrolysis
+    - Carbon steel forging
+    - New brick and electric kiln buildings
+    - Functions for modifying Technology prototypes
+    - Fancy mutator functions that are sometimes handy
