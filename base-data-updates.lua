@@ -21,21 +21,22 @@ if settings.startup["wood-industry-carbon-steel"].value then
   if mods["space-age"] then
     frep.add_ingredient("steel-plate", {type="item", name="carbon", amount=1})
     frep.add_ingredient("casting-steel", {type="item", name="carbon", amount=1})
-
+    
     if settings.startup["wood-industry-carbon-buff"].value then
       frep.scale_result("steel-plate", "steel-plate", {amount=2})
+      frep.change_time("steel-plate", {scale=2})
       frep.scale_result("casting-steel", "steel-plate", {amount=2})
+      frep.change_time("casting-steel", {scale=2})
     end
   
     frep.add_ingredient("carbon", {type="item", name="charcoal", amount=1})
-    frep.modify_ingredient("carbon", "coal", {amount=1})
   else
     frep.add_ingredient("steel-plate", {type="item", name="charcoal", amount=1})
   end
 end
 
 if mods["space-age"] and settings.startup["wood-industry-carbon-buff"].value then
-  frep.modify_ingredient("coal-synthesis", "carbon", {amount=1})
+  frep.modify_ingredient("coal-synthesis", "carbon", {amount=3})
 end
 
 if mods["space-age"] then

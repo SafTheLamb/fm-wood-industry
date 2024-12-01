@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.2
+  Changes:
+    - Nerf buffs to carbon recipe to remove infinite coal exploit via coal synthesis
+    - When doubling steel plate results, also double the smelting time!
+
+---------------------------------------------------------------------------------------------------
 Version: 0.9.1
   Minor Features:
     - Oh yeah an icon

@@ -3,12 +3,12 @@
   "title": "Wooden Industry",
   "description": "Adds uses for wood like charcoal, resin, and a steel catalyst",
   "author": "SafTheLamb",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "factorio_version": "2.0",
   "homepage": "https://github.com/sapphiriza/wood-military",
   "dependencies": [
       "base >= 2.0.7",
-      "fdsl",
+      "fdsl >= 0.1.1",
       "? space-age",
       "(?) aai-industry"
   ]
