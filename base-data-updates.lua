@@ -19,38 +19,45 @@ if settings.startup["wood-industry-carbon-steel"].value then
   data.raw.recipe["steel-plate"].category = "kiln-smelting"
 
   if mods["space-age"] then
-    frep.add_ingredient("steel-plate", {type="item", name="carbon", amount=1})
+    frep.add_ingredient("steel-plate", {type="item", name="charcoal", amount=1})
+    data.raw.recipe["steel-plate"].icons = {
+      {icon="__base__/graphics/icons/steel-plate.png", draw_background=true},
+      {icon="__wood-industry__/graphics/icons/charcoal.png", shift={-16, -16}, scale=0.5, draw_background=true}
+    }
+
     frep.add_ingredient("casting-steel", {type="item", name="carbon", amount=1})
-    
-    if settings.startup["wood-industry-carbon-buff"].value then
-      frep.scale_result("steel-plate", "steel-plate", {amount=2})
-      frep.change_time("steel-plate", {scale=2})
-      frep.scale_result("casting-steel", "steel-plate", {amount=2})
-      frep.change_time("casting-steel", {scale=2})
-    end
-  
-    frep.add_ingredient("carbon", {type="item", name="charcoal", amount=1})
+    frep.add_ingredient("tungsten-plate", {type="item", name="carbon", amount=1})
+    frep.scale_result("casting-steel", "steel-plate", {amount=2})
+    frep.change_time("casting-steel", {scale=2})
+    data.raw.recipe["casting-steel"].icons = {
+      {icon="__base__/graphics/icons/steel-plate.png", draw_background=true},
+      {icon="__space-age__/graphics/icons/carbon.png", shift={-16, -16}, scale=0.5, draw_background=true}
+    }
   else
     frep.add_ingredient("steel-plate", {type="item", name="charcoal", amount=1})
   end
 end
 
-if mods["space-age"] and settings.startup["wood-industry-carbon-buff"].value then
-  frep.modify_ingredient("coal-synthesis", "carbon", {amount=3})
-end
-
 if mods["space-age"] then
+  frep.add_ingredient("carbon", {type="item", name="charcoal", amount=1})
+  if settings.startup["wood-industry-carbon-buff"].value then
+    frep.modify_ingredient("coal-synthesis", "carbon", {amount=3})
+  end
+
   frep.replace_result("burnt-spoilage", "carbon", "charcoal")
   data.raw.recipe["burnt-spoilage"].category = "organic-or-kiln"
   data.raw.recipe["burnt-spoilage"].icons = {
     {icon="__wood-industry__/graphics/icons/charcoal-1.png", shift={8, 8}, scale=0.75, draw_background=true},
-    {icon="__space-age__/graphics/icons/spoilage.png", shift={-8, -8}, scale=0.75}
+    {icon="__space-age__/graphics/icons/spoilage.png", shift={-8, -8}, scale=0.75, draw_background=true}
   }
 
   if settings.startup["wood-industry-carbon-military"].value then
-    frep.replace_ingredient("grenade", "coal", {type="item", name="carbon", amount=8})
+    if mods["wood-military"] and settings.startup["wood-military-hard-mode"].value then
+      frep.replace_ingredient("grenade", "coal", {type="item", name="carbon", amount=4})
+    end
     frep.replace_ingredient("explosives", "coal", "carbon")
-    frep.replace_ingredient("poison-capsule", "coal", {type="item", name="carbon", amount=8})
+    frep.replace_ingredient("poison-capsule", "coal", {type="item", name="carbon", amount=6})
+    frep.replace_ingredient("slowdown-capsule", "coal", {type="item", name="carbon", amount=4})
   end
 end
 
@@ -66,4 +73,20 @@ end
 
 if mods["space-age"] then
   table.insert(data.raw["assembling-machine"]["biochamber"].crafting_categories, "organic-or-kiln")
+
+  if settings.startup["wood-industry-resin"].value then
+    data.raw.tree["ashland-lichen-tree-flaming"].minable.results = {
+      {type="item", name="charcoal", amount=5},
+      {type="item", name="resin", amount=2}
+    }
+  else
+    data.raw.tree["ashland-lichen-tree-flaming"].minable.results = {
+      {type="item", name="charcoal", amount=5},
+      {type="item", name="carbon", amount=2}
+    }
+  end
+  data.raw.tree["ashland-lichen-tree"].minable.results = {
+    {type="item", name="charcoal", amount=5},
+    {type="item", name="carbon", amount=2}
+  }
 end

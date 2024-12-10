@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.3
+  Changes:
+    - Remove recipe for producing carbon from charcoal, now only casting molten steel requires carbon
+    - To compensate, unlock recipe for Carbon earlier than Vulcanus if the Carbon military setting is enabled
+    - Resin now costs coal (to make the recipe more considerably different from charcoal)
+    - Ashland lichen trees now yield charcoal and, whether flaming or not, either resin or carbon
+  Bugfixes:
+    - Fix load error when Space Age is not enabled
+    - Electric kiln will now be auto-unlocked if electric furnaces are already researched
+
+---------------------------------------------------------------------------------------------------
 Version: 0.9.2
   Changes:
     - Nerf buffs to carbon recipe to remove infinite coal exploit via coal synthesis

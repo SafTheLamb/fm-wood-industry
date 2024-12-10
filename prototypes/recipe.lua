@@ -57,30 +57,10 @@ if settings.startup["wood-industry-resin"].value then
       auto_recycle = false,
       ingredients = {
         {type="item", name="woodchips", amount=5},
-        {type="fluid", name="steam", amount=20, minimum_temperature=165}
+        {type="item", name="coal", amount=1},
+        {type="fluid", name="steam", amount=50, minimum_temperature=165}
       },
-      results = {{type="item", name="resin", amount=1}}
-    }
-  })
-end
-
-if mods["space-age"] then
-  data:extend({
-    {
-      type = "recipe",
-      name = "carbon-from-charcoal",
-      icons = {
-        {icon="__space-age__/graphics/icons/carbon.png", shift={8, 8}, scale=0.75, draw_background=true},
-        {icon="__wood-industry__/graphics/icons/charcoal.png", shift={-8, -8}, scale=0.75}
-      },
-      category = "kiln-smelting",
-      order = "A[wood]-c[carbon]",
-      energy_required = 6.4,
-      enabled = false,
-      allow_productivity = true,
-      auto_recycle = false,
-      ingredients = {{type="item", name="charcoal", amount=2}},
-      results = {{type="item", name="carbon", amount=1}}
+      results = {{type="item", name="resin", amount=2}}
     }
   })
 end

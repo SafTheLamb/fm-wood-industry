@@ -19,7 +19,7 @@ data:extend({
 
 if mods["space-age"] then
   data:extend({
-    -- whether to buff carbon, by doubling steel output and 
+    -- whether to buff carbon, by doubling steel output
     {
       type = "bool-setting",
       name = "wood-industry-carbon-buff",
@@ -27,6 +27,7 @@ if mods["space-age"] then
       default_value = true,
       order = "a[carbon]-b[buff]"
     },
+    -- whether to make military recipes require carbon instead of coal
     {
       type = "bool-setting",
       name = "wood-industry-carbon-military",
