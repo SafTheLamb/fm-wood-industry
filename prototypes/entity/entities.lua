@@ -98,10 +98,7 @@ data:extend({
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     damaged_trigger_effect = hit_effects.entity(),
-    module_specification = {
-      module_slots = 2,
-      module_info_icon_shift = {0, 0.8}
-    },
+    module_slots = 2,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     crafting_categories = {"kiln-smelting", "organic-or-kiln"},
     crafting_speed = 2,

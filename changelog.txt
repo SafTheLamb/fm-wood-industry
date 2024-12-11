@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.4
+  Changes:
+    - Recycling recipes have wood (and lumber) results replaced with woodchips
+  Bugfixes:
+    - Fix electric kiln not having module slots
+
+---------------------------------------------------------------------------------------------------
 Version: 0.9.3
   Changes:
     - Remove recipe for producing carbon from charcoal, now only casting molten steel requires carbon
