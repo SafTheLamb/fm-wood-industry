@@ -8,9 +8,10 @@
   "homepage": "https://github.com/sapphiriza/wood-military",
   "dependencies": [
     "base >= 2.0.7",
-    "fdsl >= 0.1.1",
+    "fdsl >= 0.1.3",
     "? space-age",
-    "? wood-logistics",
+    "? wood-logistics >= 2.2.0",
+    "(?) simply-greenhouse",
     "(?) quality",
     "(?) aai-industry"
   ]
