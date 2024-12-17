@@ -12,12 +12,11 @@ data:extend({
     type = "item",
     name = "woodchips",
     icon = "__wood-industry__/graphics/icons/woodchips.png",
-    pictures =
-    {
-      {size = 64, filename = "__wood-industry__/graphics/icons/woodchips.png",   scale = 0.5, mipmap_count = 4},
-      {size = 64, filename = "__wood-industry__/graphics/icons/woodchips-1.png", scale = 0.5, mipmap_count = 4},
-      {size = 64, filename = "__wood-industry__/graphics/icons/woodchips-2.png", scale = 0.5, mipmap_count = 4},
-      {size = 64, filename = "__wood-industry__/graphics/icons/woodchips-3.png", scale = 0.5, mipmap_count = 4}
+    pictures = {
+      {size=64, filename="__wood-industry__/graphics/icons/woodchips.png", scale=0.5, mipmap_count=4},
+      {size=64, filename="__wood-industry__/graphics/icons/woodchips-1.png", scale=0.5, mipmap_count=4},
+      {size=64, filename="__wood-industry__/graphics/icons/woodchips-2.png", scale=0.5, mipmap_count=4},
+      {size=64, filename="__wood-industry__/graphics/icons/woodchips-3.png", scale=0.5, mipmap_count=4}
     },
     fuel_category = "chemical",
     fuel_value = "1MJ",
@@ -29,12 +28,11 @@ data:extend({
     type = "item",
     name = "charcoal",
     icon = "__wood-industry__/graphics/icons/charcoal.png",
-    pictures =
-    {
-      {size = 64, filename = "__wood-industry__/graphics/icons/charcoal.png",   scale = 0.5, mipmap_count = 4},
-      {size = 64, filename = "__wood-industry__/graphics/icons/charcoal-1.png", scale = 0.5, mipmap_count = 4},
-      {size = 64, filename = "__wood-industry__/graphics/icons/charcoal-2.png", scale = 0.5, mipmap_count = 4},
-      {size = 64, filename = "__wood-industry__/graphics/icons/charcoal-3.png", scale = 0.5, mipmap_count = 4}
+    pictures = {
+      {size=64, filename="__wood-industry__/graphics/icons/charcoal.png", scale=0.5, mipmap_count=4},
+      {size=64, filename="__wood-industry__/graphics/icons/charcoal-1.png", scale=0.5, mipmap_count=4},
+      {size=64, filename="__wood-industry__/graphics/icons/charcoal-2.png", scale=0.5, mipmap_count=4},
+      {size=64, filename="__wood-industry__/graphics/icons/charcoal-3.png", scale=0.5, mipmap_count=4}
     },
     fuel_category = "chemical",
     fuel_value = "3MJ",
@@ -51,24 +49,7 @@ data:extend({
     order = "b[kiln]-b[electric]",
     place_result = "electric-kiln",
     stack_size = 50
-  },
-  -- {
-  --   type = "item",
-  --   name = "dried-woodchips",
-  --   icon = "__wood-industry__/graphics/icons/dried-woodchips.png",
-  --   pictures =
-  --   {
-  --     {size = 64, filename = "__wood-industry__/graphics/icons/dried-woodchips.png",   scale = 0.5, mipmap_count = 4},
-  --     {size = 64, filename = "__wood-industry__/graphics/icons/dried-woodchips-1.png", scale = 0.5, mipmap_count = 4},
-  --     {size = 64, filename = "__wood-industry__/graphics/icons/dried-woodchips-2.png", scale = 0.5, mipmap_count = 4},
-  --     {size = 64, filename = "__wood-industry__/graphics/icons/dried-woodchips-3.png", scale = 0.5, mipmap_count = 4}
-  --   },
-  --   fuel_category = "chemical",
-  --   fuel_value = "1.5MJ",
-  --   subgroup = "raw-material",
-  --   order = "a[wood]-d[dried-woodchips]",
-  --   stack_size = 200
-  -- }
+  }
 })
 
 if settings.startup["wood-industry-resin"].value then
