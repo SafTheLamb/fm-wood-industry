@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.5
+  Changes:
+    - Add support for new Lumber mill from Wood logistics (credits to Hurricane for the wonderful graphics!)
+    - Add support for Simply Greenhouse (disables sg-charcoal)
+  Sounds:
+    - Add custom working sounds for Brick Kiln and Electric Kiln (combined from vanilla sounds)
+
+---------------------------------------------------------------------------------------------------
 Version: 0.9.4
   Changes:
     - Recycling recipes have wood (and lumber) results replaced with woodchips
