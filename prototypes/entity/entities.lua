@@ -38,7 +38,7 @@ data:extend({
         {
           name = "smoke",
           deviation = {0.1, 0.1},
-          frequency = 1,
+          frequency = 3,
           position = {0.0, -0.8},
           starting_vertical_speed = 0.08,
           starting_frame_deviation = 60
@@ -50,7 +50,19 @@ data:extend({
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     vehicle_impact_sound = sounds.car_stone_impact,
-    working_sound = data.raw.furnace["stone-furnace"].working_sound,
+    working_sound = {
+      sound = {
+        filename = "__wood-industry__/sound/brick-kiln.ogg",
+        volume = 0.6,
+        modifiers = {
+          volume_multiplier("main-menu", 1.5),
+          volume_multiplier("tips-and-tricks", 1.4)
+        }
+      },
+      audible_distance_modifier = 0.4,
+      fade_in_ticks = 4,
+      fade_out_ticks = 20
+    },
     graphics_set = {
       animation = {
         layers = {
@@ -111,7 +123,18 @@ data:extend({
     vehicle_impact_sound = sounds.generic_impact,
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
-    working_sound = data.raw.furnace["electric-furnace"].working_sound,
+    working_sound = {
+      sound = {
+        filename = "__wood-industry__/sound/electric-kiln.ogg",
+        volume = 0.85,
+        modifiers = volume_multiplier("main-menu", 4.2),
+        advanced_volume_control = {attenuation="exponential"}
+      },
+      max_sounds_per_type = 4,
+      audible_distance_modifier = 0.7,
+      fade_in_ticks = 4,
+      fade_out_ticks = 20
+    },
     graphics_set = {
       animation = {
         layers = {
