@@ -1,3 +1,8 @@
+local recipe_category = "crafting"
+if mods["wood-logistics"] and settings.startup["wood-logistics-lumber-mill"].value then
+  recipe_category = "crafting-or-carpentry"
+end
+
 data:extend({
   {
     type = "recipe",
@@ -12,7 +17,7 @@ data:extend({
   {
     type = "recipe",
     name = "woodchips",
-    category = "crafting",
+    category = recipe_category,
     enabled = false,
     allow_productivity = true,
     auto_recycle = false,
