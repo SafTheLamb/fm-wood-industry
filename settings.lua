@@ -14,6 +14,13 @@ data:extend({
     setting_type = "startup",
     default_value = true,
     order = "b[resin]"
+  },
+  {
+    type = "bool-setting",
+    name = "wood-industry-nerf-wood-fuel",
+    setting_type = "startup",
+    default_value = true,
+    order = "m[misc]-b[fuelnerf]"
   }
 })
 
@@ -33,7 +40,7 @@ if mods["space-age"] then
       name = "wood-industry-carbon-military",
       setting_type = "startup",
       default_value = true,
-      order = "z[misc]-a[carbon-military]"
+      order = "m[misc]-a[carbon-military]"
     }
   })
 end

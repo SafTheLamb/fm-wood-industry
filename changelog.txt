@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.6
+  Changes:
+    - Optionally nerf fuel value of wood to make charcoal more enticing
+    - Add compatibility with Early Agriculture
+  Bugfixes:
+    - Fix compat with Simply Greenhouse
+
+---------------------------------------------------------------------------------------------------
 Version: 0.9.5
   Changes:
     - Add support for new Lumber mill from Wood logistics (credits to Hurricane for the wonderful graphics!)

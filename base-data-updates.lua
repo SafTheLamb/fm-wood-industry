@@ -13,6 +13,14 @@ if mods["aai-industry"] then
   data.raw.item["industrial-furnace"].order = "a[furnace]-d[industrial]"
 end
 
+if settings.startup["wood-industry-nerf-wood-fuel"].value then
+  data.raw.item["wood"].fuel_value = "1MJ"
+  data.raw.item["woodchips"].fuel_value = "0.5MJ"
+  if mods["wood-logistics"] and settings.startup["wood-logistics-lumber"].value then
+    data.raw.item["lumber"].fuel_value = "2MJ"
+  end
+end
+
 -------------------------------------------------------------------------- Recipe changes
 
 if settings.startup["wood-industry-carbon-steel"].value then

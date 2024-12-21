@@ -10,6 +10,9 @@ end
 
 if settings.startup["wood-industry-resin"].value then
   ftech.add_prereq("plastics", "resin-processing")
+  if mods["early-agriculture"] then
+    ftech.add_prereq("resin-processing", "basic-agriculture")
+  end
   if mods["aai-industry"] then
     ftech.add_prereq("resin-processing", "steam-power")
   end
