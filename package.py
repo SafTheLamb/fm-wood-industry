@@ -27,7 +27,7 @@ else:
 
 # Copy all other files into the subfolder
 denyfiles = { 'package.py', 'package.bat', '.gitignore', 'README.md', 'TODO.md' }
-denyextensions = { '.kra', '.zip', '.pdn', '.afphoto' }
+denyextensions = { '.kra', '.zip', '.pdn', '.afphoto', '.cube' }
 denydirs = { f'{packagename}', '.git', '.vscode' }
 
 def filedenied(name):
