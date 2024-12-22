@@ -30,7 +30,7 @@ if settings.startup["wood-industry-carbon-steel"].value then
     frep.add_ingredient("steel-plate", {type="item", name="charcoal", amount=1})
     data.raw.recipe["steel-plate"].icons = {
       {icon="__base__/graphics/icons/steel-plate.png", draw_background=true},
-      {icon="__wood-industry__/graphics/icons/charcoal.png", shift={-16, -16}, scale=0.5, draw_background=true}
+      {icon="__wood-base-assets__/graphics/icons/charcoal.png", shift={-16, -16}, scale=0.5, draw_background=true}
     }
 
     frep.add_ingredient("casting-steel", {type="item", name="carbon", amount=1})
@@ -55,7 +55,7 @@ if mods["space-age"] then
   frep.replace_result("burnt-spoilage", "carbon", "charcoal")
   data.raw.recipe["burnt-spoilage"].category = "organic-or-kiln"
   data.raw.recipe["burnt-spoilage"].icons = {
-    {icon="__wood-industry__/graphics/icons/charcoal-1.png", shift={8, 8}, scale=0.75, draw_background=true},
+    {icon="__wood-base-assets__/graphics/icons/charcoal-1.png", shift={8, 8}, scale=0.75, draw_background=true},
     {icon="__space-age__/graphics/icons/spoilage.png", shift={-8, -8}, scale=0.75, draw_background=true}
   }
 

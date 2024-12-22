@@ -5,7 +5,7 @@ data:extend({
   {
     type = "assembling-machine",
     name = "brick-kiln",
-    icon = "__wood-industry__/graphics/icons/brick-kiln.png",
+    icon = "__wood-base-assets__/graphics/icons/brick-kiln.png",
     icon_size = 64, icon_mipmaps = 4,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "brick-kiln"},
@@ -52,7 +52,7 @@ data:extend({
     vehicle_impact_sound = sounds.car_stone_impact,
     working_sound = {
       sound = {
-        filename = "__wood-industry__/sound/brick-kiln.ogg",
+        filename = "__wood-base-assets__/sound/brick-kiln.ogg",
         volume = 0.6,
         modifiers = {
           volume_multiplier("main-menu", 1.5),
@@ -67,7 +67,7 @@ data:extend({
       animation = {
         layers = {
           {
-            filename = "__wood-industry__/graphics/entity/brick-kiln/brick-kiln.png",
+            filename = "__wood-base-assets__/graphics/entity/brick-kiln/brick-kiln.png",
             priority = "extra-high",
             width = 151,
             height = 146,
@@ -95,7 +95,7 @@ data:extend({
   {
     type = "assembling-machine",
     name = "electric-kiln",
-    icon = "__wood-industry__/graphics/icons/electric-kiln.png",
+    icon = "__wood-base-assets__/graphics/icons/electric-kiln.png",
     icon_size = 64, icon_mipmaps = 4,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "electric-kiln"},
@@ -125,7 +125,7 @@ data:extend({
     close_sound = sounds.machine_close,
     working_sound = {
       sound = {
-        filename = "__wood-industry__/sound/electric-kiln.ogg",
+        filename = "__wood-base-assets__/sound/electric-kiln.ogg",
         volume = 0.85,
         modifiers = volume_multiplier("main-menu", 4.2),
         advanced_volume_control = {attenuation="exponential"}
@@ -139,7 +139,7 @@ data:extend({
       animation = {
         layers = {
           {
-            filename = "__wood-industry__/graphics/entity/electric-kiln/electric-kiln.png",
+            filename = "__wood-base-assets__/graphics/entity/electric-kiln/electric-kiln.png",
             priority = "high",
             width = 239,
             height = 219,

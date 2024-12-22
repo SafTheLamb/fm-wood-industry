@@ -2,7 +2,7 @@ data:extend({
   {
     type = "corpse",
     name = "brick-kiln-remnants",
-    icon = "__wood-industry__/graphics/icons/brick-kiln.png",
+    icon = "__wood-base-assets__/graphics/icons/brick-kiln.png",
     icon_size = 64, icon_mipmaps = 4,
     flags = {"placeable-neutral", "building-direction-8-way", "not-on-map"},
     subgroup = "smelting-machine-remnants",
@@ -16,7 +16,7 @@ data:extend({
     final_render_layer = "remnants",
     remove_on_tile_placement = false,
     animation = make_rotated_animation_variations_from_sheet(1, {
-      filename = "__wood-industry__/graphics/entity/brick-kiln/remnants/brick-kiln-remnants.png",
+      filename = "__wood-base-assets__/graphics/entity/brick-kiln/remnants/brick-kiln-remnants.png",
       line_length = 1,
       width = 152,
       height = 130,
@@ -29,7 +29,7 @@ data:extend({
   {
     type = "corpse",
     name = "electric-kiln-remnants",
-    icon = "__wood-industry__/graphics/icons/electric-kiln.png",
+    icon = "__wood-base-assets__/graphics/icons/electric-kiln.png",
     icon_size = 64, icon_mipmaps = 4,
     flags = {"placeable-neutral", "building-direction-8-way", "not-on-map"},
     subgroup = "smelting-machine-remnants",
@@ -42,7 +42,7 @@ data:extend({
     final_render_layer = "remnants",
     remove_on_tile_placement = false,
     animation = {
-      filename = "__wood-industry__/graphics/entity/electric-kiln/remnants/electric-kiln-remnants.png",
+      filename = "__wood-base-assets__/graphics/entity/electric-kiln/remnants/electric-kiln-remnants.png",
       line_length = 1,
       width = 454,
       height = 448,

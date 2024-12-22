@@ -2,7 +2,7 @@ data:extend({
   {
     type = "technology",
     name = "wood-pyrolysis",
-    icon = "__wood-industry__/graphics/technology/wood-pyrolysis.png",
+    icon = "__wood-base-assets__/graphics/technology/wood-pyrolysis.png",
     icon_size = 256,
     prerequisites = {"automation-science-pack"},
     effects = {
@@ -23,7 +23,7 @@ if settings.startup["wood-industry-resin"].value then
     {
       type = "technology",
       name = "resin-processing",
-      icon = "__wood-industry__/graphics/technology/resin-processing.png",
+      icon = "__wood-base-assets__/graphics/technology/resin-processing.png",
       icon_size = 256,
       prerequisites = {"automation-2"},
       effects = {{type="unlock-recipe", recipe="resin"}},
