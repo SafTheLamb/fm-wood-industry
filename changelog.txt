@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+  Changes:
+    - Undo updates to steel smelting and steel casting recipe icons.
+
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
   Changes:
     - Move all assets into a separate mod (wood-base-assets) to reduce large frequent download sizes

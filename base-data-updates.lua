@@ -28,19 +28,11 @@ if settings.startup["wood-industry-carbon-steel"].value then
 
   if mods["space-age"] then
     frep.add_ingredient("steel-plate", {type="item", name="charcoal", amount=1})
-    data.raw.recipe["steel-plate"].icons = {
-      {icon="__base__/graphics/icons/steel-plate.png", draw_background=true},
-      {icon="__wood-base-assets__/graphics/icons/charcoal.png", shift={-16, -16}, scale=0.5, draw_background=true}
-    }
 
     frep.add_ingredient("casting-steel", {type="item", name="carbon", amount=1})
     frep.add_ingredient("tungsten-plate", {type="item", name="carbon", amount=1})
     frep.scale_result("casting-steel", "steel-plate", {amount=2})
     frep.change_time("casting-steel", {scale=2})
-    data.raw.recipe["casting-steel"].icons = {
-      {icon="__base__/graphics/icons/steel-plate.png", draw_background=true},
-      {icon="__space-age__/graphics/icons/carbon.png", shift={-16, -16}, scale=0.5, draw_background=true}
-    }
   else
     frep.add_ingredient("steel-plate", {type="item", name="charcoal", amount=1})
   end
