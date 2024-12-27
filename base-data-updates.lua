@@ -25,16 +25,21 @@ end
 
 if settings.startup["wood-industry-carbon-steel"].value then
   data.raw.recipe["steel-plate"].category = "kiln-smelting"
-
+  frep.add_ingredient("steel-plate", {type="item", name="charcoal", amount=1})
+  
   if mods["space-age"] then
-    frep.add_ingredient("steel-plate", {type="item", name="charcoal", amount=1})
-
     frep.add_ingredient("casting-steel", {type="item", name="carbon", amount=1})
-    frep.add_ingredient("tungsten-plate", {type="item", name="carbon", amount=1})
     frep.scale_result("casting-steel", "steel-plate", {amount=2})
     frep.change_time("casting-steel", {scale=2})
-  else
-    frep.add_ingredient("steel-plate", {type="item", name="charcoal", amount=1})
+    frep.add_ingredient("tungsten-plate", {type="item", name="charcoal", amount=1})
+  end
+end
+
+if mods["bztitanium"] and settings.startup["wood-industry-titanium"].value then
+  data.raw.recipe["titanium-plate"].category = "kiln-smelting"
+  frep.add_ingredient("titanium-plate", {type="item", name="charcoal", amount=2})
+  if mods["space-age"] then
+    frep.add_ingredient("titanium-in-foundry", {type="item", name="carbon", amount=1})
   end
 end
 

@@ -1,5 +1,5 @@
 data:extend({
-  -- whether you need carbon to forge steel (charcoal if no SA)
+  -- whether you need charcoal / carbon to forge steel, also affects tungsten
   {
     type = "bool-setting",
     name = "wood-industry-carbon-steel",
@@ -41,6 +41,18 @@ if mods["space-age"] then
       setting_type = "startup",
       default_value = true,
       order = "m[misc]-a[carbon-military]"
+    }
+  })
+end
+
+if mods["bztitanium"] then
+  data:extend({
+    {
+      type = "bool-setting",
+      name = "wood-industry-titanium",
+      setting_type = "startup",
+      default_value = true,
+      order = "a[carbon]-m[mods]-a[bztitanium]"
     }
   })
 end

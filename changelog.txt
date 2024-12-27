@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+  Minor Features:
+    - Add support for [Titanium](https://mods.factorio.com/mod/bztitanium)
+  Changes:
+    - Change tungsten plate to require charcoal instead of carbon (since Tungsten carbide... already uses Carbon... lol)
+
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
   Changes:
     - Undo updates to steel smelting and steel casting recipe icons.

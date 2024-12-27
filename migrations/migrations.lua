@@ -3,7 +3,8 @@ for _,force in pairs(game.forces) do
   local recipes = force.recipes
 
   recipes["electric-kiln"].enabled = technologies["advanced-material-processing-2"].researched
-  if settings.startup["wood-industry-carbon-military"].value then
-    recipes["carbon"].enabled = technologies["sulfur-processing"].researched
+  if script.active_mods["space-age"] then
+    local technology_name = settings.startup["wood-industry-carbon-military"].value and "sulfur-processing" or "tungsten-carbide"
+    recipes["carbon"].enabled = technologies[technology_name].researched
   end
 end
