@@ -26,3 +26,7 @@ if mods["space-age"] and settings.startup["wood-industry-carbon-military"].value
 
   ftech.remove_unlock("tungsten-carbide", "carbon")
 end
+
+if settings.startup["wood-industry-heavy-oil-adsorption"].value then
+  ftech.add_unlock("advanced-oil-processing", "heavy-oil-adsorption")
+end

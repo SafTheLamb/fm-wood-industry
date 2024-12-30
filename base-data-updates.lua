@@ -35,6 +35,19 @@ if settings.startup["wood-industry-carbon-steel"].value then
   end
 end
 
+if mods["bzlead"] and settings.startup["wood-industry-lead"].value then
+  data.raw.recipe["lead-plate"].category = "kiln-smelting"
+  frep.add_ingredient("lead-plate", {type="item", name="charcoal", amount=1})
+  frep.scale_ingredient("lead-plate", "lead-ore", {amount=2})
+  frep.scale_result("lead-plate", "lead-plate", {amount=2})
+  frep.scale_result("lead-plate", "copper-ore", {probability=2})
+  if mods["space-age"] then
+    -- still use charcoal here instead of carbon, since its role in lead smelting is specifically a purifying agent
+    frep.add_ingredient("molten-lead-from-lava", {type="item", name="charcoal", amount=5})
+    frep.add_ingredient("molten-lead", {type="item", name="charcoal", amount=5})
+  end
+end
+
 if mods["bztitanium"] and settings.startup["wood-industry-titanium"].value then
   data.raw.recipe["titanium-plate"].category = "kiln-smelting"
   frep.add_ingredient("titanium-plate", {type="item", name="charcoal", amount=2})
@@ -51,6 +64,7 @@ if mods["space-age"] then
 
   frep.replace_result("burnt-spoilage", "carbon", "charcoal")
   data.raw.recipe["burnt-spoilage"].category = "organic-or-kiln"
+  data.raw.recipe["burnt-spoilage"].energy_required = 6
   data.raw.recipe["burnt-spoilage"].icons = {
     {icon="__wood-base-assets__/graphics/icons/charcoal-1.png", shift={8, 8}, scale=0.75, draw_background=true},
     {icon="__space-age__/graphics/icons/spoilage.png", shift={-8, -8}, scale=0.75, draw_background=true}
@@ -72,6 +86,26 @@ if settings.startup["wood-industry-resin"].value then
     data.raw.recipe["resin"].category = "organic-or-chemistry"
     frep.add_ingredient("bioplastic", {type="item", name="resin", amount=1})
   end
+end
+
+if settings.startup["wood-industry-heavy-oil-adsorption"].value then
+  if mods["aai-industry"] then
+    frep.add_ingredient("advanced-oil-processing", {type="item", name="charcoal", amount=1})
+    data.raw.recipe["advanced-oil-processing"].order = "a[oil-processing]-b[advanced-oil-processing]b"
+  end
+end
+
+if settings.startup["wood-industry-lubricant"].value then
+  frep.add_ingredient("lubricant", {type="item", name="charcoal", amount=1})
+
+  if mods["space-age"] then
+    frep.add_ingredient("biolubricant", {type="item", name="charcoal", amount=1})
+  end
+end
+
+if mods["space-age"] then
+  frep.add_ingredient("artificial-yumako-soil", {type="item", name="charcoal", amount=5})
+  frep.add_ingredient("artificial-jellynut-soil", {type="item", name="charcoal", amount=5})
 end
 
 -------------------------------------------------------------------------- Entity changes

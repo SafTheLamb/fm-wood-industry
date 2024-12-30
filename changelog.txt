@@ -1,7 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+  Major Features:
+    - Add setting to add heavy oil adsorption recipe that uses charcoal
+    - Add setting to add charcoal to lubricant recipes
+  Minor Features:
+    - Add support for brevven's Lead
+  Changes:
+    - Artificial yumako soil and Artificial jellynut soil now require charcoal to craft
+    - Halve crafting time for burnt spoilage (since it now produces charcoal instead)
+
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
   Minor Features:
-    - Add support for [Titanium](https://mods.factorio.com/mod/bztitanium)
+    - Add support for brevven's Titanium
   Changes:
     - Change tungsten plate to require charcoal instead of carbon (since Tungsten carbide... already uses Carbon... lol)
 

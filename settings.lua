@@ -21,6 +21,20 @@ data:extend({
     setting_type = "startup",
     default_value = true,
     order = "m[misc]-b[fuelnerf]"
+  },
+  {
+    type = "bool-setting",
+    name = "wood-industry-heavy-oil-adsorption",
+    setting_type = "startup",
+    default_value = true,
+    order = "c[adsorption]-a[heavy-oil]"
+  },
+  {
+    type = "bool-setting",
+    name = "wood-industry-lubricant",
+    setting_type = "startup",
+    default_value = true,
+    order = "c[adsorption]-b[lubricant]"
   }
 })
 
@@ -45,6 +59,18 @@ if mods["space-age"] then
   })
 end
 
+if mods["bzlead"] then
+  data:extend({
+    {
+      type = "bool-setting",
+      name = "wood-industry-lead",
+      setting_type = "startup",
+      default_value = true,
+      order = "a[carbon]-m[mods]-a[bzlead]"
+    }
+  })
+end
+
 if mods["bztitanium"] then
   data:extend({
     {
@@ -52,7 +78,7 @@ if mods["bztitanium"] then
       name = "wood-industry-titanium",
       setting_type = "startup",
       default_value = true,
-      order = "a[carbon]-m[mods]-a[bztitanium]"
+      order = "a[carbon]-m[mods]-b[bztitanium]"
     }
   })
 end

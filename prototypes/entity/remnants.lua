@@ -34,9 +34,9 @@ data:extend({
     flags = {"placeable-neutral", "building-direction-8-way", "not-on-map"},
     subgroup = "smelting-machine-remnants",
     order = "a-a-a",
-    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-    tile_width = 5,
-    tile_height = 5,
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    tile_width = 3,
+    tile_height = 3,
     selectable_in_game = false,
     time_before_removed = 60 * 60 * 15, -- 15 minutes
     final_render_layer = "remnants",
@@ -51,5 +51,5 @@ data:extend({
       shift = util.by_pixel(-3.25, 7.25),
       scale = 0.5
     }
-  },
+  }
 })
