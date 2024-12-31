@@ -62,14 +62,6 @@ if mods["space-age"] then
     frep.modify_ingredient("coal-synthesis", "carbon", {amount=3})
   end
 
-  frep.replace_result("burnt-spoilage", "carbon", "charcoal")
-  data.raw.recipe["burnt-spoilage"].category = "organic-or-kiln"
-  data.raw.recipe["burnt-spoilage"].energy_required = 6
-  data.raw.recipe["burnt-spoilage"].icons = {
-    {icon="__wood-base-assets__/graphics/icons/charcoal-1.png", shift={8, 8}, scale=0.75, draw_background=true},
-    {icon="__space-age__/graphics/icons/spoilage.png", shift={-8, -8}, scale=0.75, draw_background=true}
-  }
-
   if settings.startup["wood-industry-carbon-military"].value then
     if mods["wood-military"] and settings.startup["wood-military-hard-mode"].value then
       frep.replace_ingredient("grenade", "coal", {type="item", name="carbon", amount=4})

@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+  Minor Features:
+    - Revert burnt spoilage to produce carbon again (Since it softlocked Gleba out of coal)
+
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Major Features:
     - Add setting to add heavy oil adsorption recipe that uses charcoal
