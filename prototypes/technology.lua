@@ -1,22 +1,24 @@
-data:extend({
-  {
-    type = "technology",
-    name = "wood-pyrolysis",
-    icon = "__wood-base-assets__/graphics/technology/wood-pyrolysis.png",
-    icon_size = 256,
-    prerequisites = {"automation-science-pack"},
-    effects = {
-      {type="unlock-recipe", recipe="brick-kiln"},
-      {type="unlock-recipe", recipe="woodchips"},
-      {type="unlock-recipe", recipe="charcoal"}
-    },
-    unit = {
-      count = 10,
-      ingredients = {{"automation-science-pack", 1}},
-      time = 10
+if mods["aai-industry"] then
+  data:extend({
+    {
+      type = "technology",
+      name = "wood-pyrolysis",
+      icon = "__wood-base-assets__/graphics/technology/wood-pyrolysis.png",
+      icon_size = 256,
+      prerequisites = {"automation-science-pack"},
+      effects = {
+        {type="unlock-recipe", recipe="brick-kiln"},
+        {type="unlock-recipe", recipe="woodchips"},
+        {type="unlock-recipe", recipe="charcoal"}
+      },
+      unit = {
+        count = 10,
+        ingredients = {{"automation-science-pack", 1}},
+        time = 10
+      }
     }
-  }
-})
+  })
+end
 
 if settings.startup["wood-industry-resin"].value then
   data:extend({

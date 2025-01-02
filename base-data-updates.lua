@@ -35,32 +35,14 @@ if settings.startup["wood-industry-carbon-steel"].value then
   end
 end
 
-if mods["bzlead"] and settings.startup["wood-industry-lead"].value then
-  data.raw.recipe["lead-plate"].category = "kiln-smelting"
-  frep.add_ingredient("lead-plate", {type="item", name="charcoal", amount=1})
-  frep.scale_ingredient("lead-plate", "lead-ore", {amount=2})
-  frep.scale_result("lead-plate", "lead-plate", {amount=2})
-  frep.scale_result("lead-plate", "copper-ore", {probability=2})
-  if mods["space-age"] then
-    -- still use charcoal here instead of carbon, since its role in lead smelting is specifically a purifying agent
-    frep.add_ingredient("molten-lead-from-lava", {type="item", name="charcoal", amount=5})
-    frep.add_ingredient("molten-lead", {type="item", name="charcoal", amount=5})
-  end
-end
-
-if mods["bztitanium"] and settings.startup["wood-industry-titanium"].value then
-  data.raw.recipe["titanium-plate"].category = "kiln-smelting"
-  frep.add_ingredient("titanium-plate", {type="item", name="charcoal", amount=2})
-  if mods["space-age"] then
-    frep.add_ingredient("titanium-in-foundry", {type="item", name="carbon", amount=1})
-  end
-end
-
 if mods["space-age"] then
   frep.add_ingredient("carbon", {type="item", name="charcoal", amount=1})
   if settings.startup["wood-industry-carbon-buff"].value then
     frep.modify_ingredient("coal-synthesis", "carbon", {amount=3})
   end
+
+  frep.add_ingredient("artificial-yumako-soil", {type="item", name="charcoal", amount=12})
+  frep.add_ingredient("artificial-jellynut-soil", {type="item", name="charcoal", amount=12})
 
   if settings.startup["wood-industry-carbon-military"].value then
     if mods["wood-military"] and settings.startup["wood-military-hard-mode"].value then
@@ -98,6 +80,65 @@ end
 if mods["space-age"] then
   frep.add_ingredient("artificial-yumako-soil", {type="item", name="charcoal", amount=5})
   frep.add_ingredient("artificial-jellynut-soil", {type="item", name="charcoal", amount=5})
+end
+
+-------------------------------------------------------------------------- BZ mods
+
+if mods["bzlead"] and settings.startup["wood-industry-lead"].value then
+  data.raw.recipe["lead-plate"].category = "kiln-smelting"
+  frep.add_ingredient("lead-plate", {type="item", name="charcoal", amount=1})
+  frep.scale_ingredient("lead-plate", "lead-ore", {amount=2.5})
+  frep.scale_result("lead-plate", "lead-plate", {amount=2.5})
+  frep.scale_result("lead-plate", "copper-ore", {probability=2.5})
+
+  if mods["space-age"] then
+    -- still use charcoal here instead of carbon, since its role in lead smelting is specifically a purifying agent
+    frep.add_ingredient("molten-lead-from-lava", {type="item", name="charcoal", amount=5})
+    frep.add_ingredient("molten-lead", {type="item", name="charcoal", amount=5})
+  end
+end
+
+if mods["bztin"] and settings.startup["wood-industry-tin"].value then
+  data.raw.recipe["solder"].category = "kiln-smelting"
+  if mods["aai-industry"] then
+    data.raw.recipe["glass"].category = "kiln-smelting"
+    frep.add_ingredient("glass", {type="item", name="tin-ore", amount=1})
+    frep.scale_ingredient("glass", "sand", {amount=5})
+    frep.scale_result("glass", "glass", {amount=5})
+  end
+  if settings.startup["bztin-more-intermediates"].value == "bronze" then
+    data.raw.recipe["bronze-plate"].category = "kiln-smelting"
+    frep.add_ingredient("bronze-plate", {type="item", name="charcoal", amount=4})
+    if mods["space-age"] then
+      frep.add_ingredient("casting-bronze", {type="item", name="carbon", amount=1})
+      frep.scale_ingredient("casting-bronze", "molten-copper", {amount=5})
+      frep.scale_ingredient("casting-bronze", "molten-tin", {amount=5})
+      frep.scale_result("casting-bronze", "bronze-plate", {amount=5})
+    end
+  end
+end
+
+if mods["bztitanium"] and settings.startup["wood-industry-titanium"].value then
+  data.raw.recipe["titanium-plate"].category = "kiln-smelting"
+  frep.add_ingredient("titanium-plate", {type="item", name="charcoal", amount=2})
+  if mods["space-age"] then
+    frep.add_ingredient("titanium-in-foundry", {type="item", name="carbon", amount=1})
+  end
+end
+
+-------------------------------------------------------------------------- Air scrubbing
+
+if mods["atan-air-scrubbing"] then
+  local filter_ingredient = "coal"
+  if mods["space-age"] then
+    filter_ingredient = "carbon"
+    frep.replace_ingredient("atan-spore-filter", "plastic-bar", "carbon-fiber")
+    frep.replace_ingredient("atan-spore-filter", filter_ingredient, {type="item", name="charcoal", amount=5})
+    frep.add_ingredient("atan-spore-filter-cleaning", {type="item", name="charcoal", amount=5})
+  end
+  frep.replace_ingredient("atan-pollution-filter", "plastic-bar", "low-density-structure")
+  frep.replace_ingredient("atan-pollution-filter", filter_ingredient, {type="item", name="charcoal", amount=5})
+  frep.add_ingredient("atan-pollution-filter-cleaning", {type="item", name="charcoal", amount=2})
 end
 
 -------------------------------------------------------------------------- Entity changes

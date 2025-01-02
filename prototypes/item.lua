@@ -46,7 +46,7 @@ data:extend({
     fuel_value = "3MJ",
     fuel_emissions_multiplier = 0.75,
     subgroup = "raw-material",
-    order = "A[wood]-b[charcoal]",
+    order = "b[chemistry]-fa[charcoal]",
     inventory_move_sound = item_sounds.resource_inventory_move,
     pick_sound = item_sounds.resource_inventory_pickup,
     drop_sound = item_sounds.resource_inventory_move,

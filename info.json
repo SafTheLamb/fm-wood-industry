@@ -3,7 +3,7 @@
   "title": "Wooden Industry",
   "description": "Adds uses for wood like charcoal, resin, and a steel catalyst",
   "author": "SafTheLamb",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "factorio_version": "2.0",
   "homepage": "https://github.com/sapphiriza/wood-military",
   "dependencies": [
@@ -13,11 +13,14 @@
     "wood-base-assets >= 1.1.0",
     "? wood-logistics >= 2.2.0",
     "? early-agriculture",
-    "(?) simply-greenhouse",
+    "? bztin",
     "(?) bzlead",
     "(?) bztitanium",
+    "(?) atan-air-scrubber",
+    "(?) simply-greenhouse",
+    "(?) atan-air-scrubbing",
     "(?) quality",
-    "(?) aai-industry",
+    "? aai-industry",
     "(?) aai-loaders"
   ]
 }

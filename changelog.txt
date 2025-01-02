@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+  Minor Features:
+    - Add compatibility for BZ Tin: Solder, Bronze, and Glass are smelted in the Kiln now
+    - Add compatibility for the Air Scrubber mod: coal/carbon is replaced with charcoal
+    - Add charcoal to recipes for Artificial Yumako Soil and Artificial Jellynut Soil
+  Changes:
+    - Remove Pyrolysis technology unless aai-industry is installed
+    - This fixes early-game softlock when combined with Lead without AAI Industry
+
+---------------------------------------------------------------------------------------------------
 Version: 1.1.1
   Minor Features:
     - Revert burnt spoilage to produce carbon again (Since it softlocked Gleba out of coal)

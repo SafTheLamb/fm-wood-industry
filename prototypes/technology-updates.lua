@@ -30,3 +30,38 @@ end
 if settings.startup["wood-industry-heavy-oil-adsorption"].value then
   ftech.add_unlock("advanced-oil-processing", "heavy-oil-adsorption")
 end
+
+-------------------------------------------------------------------------- BZ mods
+
+if mods["bzlead"] and settings.startup["wood-industry-lead"].value then
+  if mods["aai-industry"] then
+    ftech.add_unlock("electricity", "lead-expansion-bolt")
+    ftech.add_unlock("wood-pyrolysis", "lead-plate")
+    ftech.add_unlock("wood-pyrolysis", "lead-chest")
+  else
+    ftech.add_unlock("electronics", "lead-expansion-bolt")
+  end
+end
+
+if mods["bztin"] and settings.startup["wood-industry-tin"].value then
+  if mods["aai-industry"] then
+    ftech.add_unlock("wood-pyrolysis", "solder")
+    ftech.add_prereq("electricity", "wood-pyrolysis")
+    ftech.add_prereq("glass-processing", "wood-pyrolysis")
+    ftech.add_prereq("basic-fluid-handling", "wood-pyrolysis")
+  end
+  if settings.startup["bztin-more-intermediates"].value == "bronze" then
+    ftech.add_prereq("automation", "wood-pyrolysis")
+  end
+end
+
+-------------------------------------------------------------------------- Air scrubbing
+
+if mods["atan-air-scrubbing"] and mods["space-age"] then
+  ftech.add_prereq("atan-pollution-scrubbing", "space-science-pack")
+  ftech.remove_prereq("atan-pollution-scrubbing", "space-platform")
+  ftech.add_cost_ingredient("atan-pollution-scrubbing", "space-science-pack")
+
+  ftech.add_prereq("atan-spore-scrubbing", "carbon-fiber")
+  ftech.add_cost_ingredient("atan-spore-scrubbing", "space-science-pack")
+end

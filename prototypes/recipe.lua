@@ -8,11 +8,16 @@ if mods["space-age"] then
   chemistry_category = "organic-or-chemistry"
 end
 
+local start_with_pyrolysis = true
+if mods["aai-industry"] then
+  start_with_pyrolysis = false
+end
+
 data:extend({
   {
     type = "recipe",
     name = "brick-kiln",
-    enabled = false,
+    enabled = start_with_pyrolysis,
     ingredients = {
       {type="item", name="stone-furnace", amount=1},
       {type="item", name="stone-brick", amount=5}
@@ -23,7 +28,7 @@ data:extend({
     type = "recipe",
     name = "woodchips",
     category = carpentry_category,
-    enabled = false,
+    enabled = start_with_pyrolysis,
     allow_productivity = true,
     auto_recycle = false,
     ingredients = {{type="item", name="wood", amount=1}},
@@ -33,7 +38,7 @@ data:extend({
     type = "recipe",
     name = "charcoal",
     category = "kiln-smelting",
-    enabled = false,
+    enabled = start_with_pyrolysis,
     allow_productivity = true,
     auto_recycle = false,
     energy_required = 6.4,
@@ -68,7 +73,7 @@ if settings.startup["wood-industry-resin"].value then
       ingredients = {
         {type="item", name="woodchips", amount=5},
         {type="item", name="coal", amount=1},
-        {type="fluid", name="steam", amount=50, minimum_temperature=165}
+        {type="fluid", name="steam", amount=50}
       },
       results = {{type="item", name="resin", amount=2}}
     }

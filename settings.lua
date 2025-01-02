@@ -66,7 +66,19 @@ if mods["bzlead"] then
       name = "wood-industry-lead",
       setting_type = "startup",
       default_value = true,
-      order = "a[carbon]-m[mods]-a[bzlead]"
+      order = "m[mods]-a[bzlead]"
+    }
+  })
+end
+
+if mods["bztin"] then
+  data:extend({
+    {
+      type = "bool-setting",
+      name = "wood-industry-tin",
+      setting_type = "startup",
+      default_value = true,
+      order = "m[mods]-b[bztin]"
     }
   })
 end
@@ -78,7 +90,7 @@ if mods["bztitanium"] then
       name = "wood-industry-titanium",
       setting_type = "startup",
       default_value = true,
-      order = "a[carbon]-m[mods]-b[bztitanium]"
+      order = "m[mods]-c[bztitanium]"
     }
   })
 end
