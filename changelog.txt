@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+  Minor Features:
+    - Add kiln smelting compatibility for Hot Metals
+  Bugfixes:
+    - Fix tech loop with APCS + Tin
+
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
   Minor Features:
     - Add compatibility for BZ Tin: Solder, Bronze, and Glass are smelted in the Kiln now

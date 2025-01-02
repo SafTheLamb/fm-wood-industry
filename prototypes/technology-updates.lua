@@ -47,7 +47,9 @@ if mods["bztin"] and settings.startup["wood-industry-tin"].value then
   if mods["aai-industry"] then
     ftech.add_unlock("wood-pyrolysis", "solder")
     ftech.add_prereq("electricity", "wood-pyrolysis")
-    ftech.add_prereq("glass-processing", "wood-pyrolysis")
+    if not mods["apm_power_ldinc"] then
+      ftech.add_prereq("glass-processing", "wood-pyrolysis")
+    end
     ftech.add_prereq("basic-fluid-handling", "wood-pyrolysis")
   end
   if settings.startup["bztin-more-intermediates"].value == "bronze" then

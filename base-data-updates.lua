@@ -78,6 +78,7 @@ if settings.startup["wood-industry-lubricant"].value then
 end
 
 if mods["space-age"] then
+  data.raw.recipe["burnt-spoilage"].category = "organic-or-kiln"
   frep.add_ingredient("artificial-yumako-soil", {type="item", name="charcoal", amount=5})
   frep.add_ingredient("artificial-jellynut-soil", {type="item", name="charcoal", amount=5})
 end
@@ -100,7 +101,7 @@ end
 
 if mods["bztin"] and settings.startup["wood-industry-tin"].value then
   data.raw.recipe["solder"].category = "kiln-smelting"
-  if mods["aai-industry"] then
+  if mods["aai-industry"] and not mods["apm_power_ldinc"] then
     data.raw.recipe["glass"].category = "kiln-smelting"
     frep.add_ingredient("glass", {type="item", name="tin-ore", amount=1})
     frep.scale_ingredient("glass", "sand", {amount=5})
@@ -124,6 +125,11 @@ if mods["bztitanium"] and settings.startup["wood-industry-titanium"].value then
   if mods["space-age"] then
     frep.add_ingredient("titanium-in-foundry", {type="item", name="carbon", amount=1})
   end
+end
+
+if mods["hot-metals"] then
+  table.insert(HotMetals.craftingCategories, "kiln-smelting")
+  table.insert(HotMetals.craftingCategories, "organic-or-kiln")
 end
 
 -------------------------------------------------------------------------- Air scrubbing
