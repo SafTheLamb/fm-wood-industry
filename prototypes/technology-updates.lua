@@ -9,12 +9,23 @@ if settings.startup["wood-industry-carbon-steel"].value then
 end
 
 if settings.startup["wood-industry-resin"].value then
-  ftech.add_prereq("plastics", "resin-processing")
+  if not (mods["any-planet-start"] and settings.startup["aps-planet"].value == "fulgora") then
+    ftech.add_prereq("plastics", "resin-processing")
+  end
+
   if mods["early-agriculture"] then
     ftech.add_prereq("resin-processing", "basic-agriculture")
   end
   if mods["aai-industry"] then
     ftech.add_prereq("resin-processing", "steam-power")
+  end
+end
+
+if mods["space-age"] then
+  local astroponics_technology = mods["astroponics"] and "astroponics" or "space-platform-thruster"
+  ftech.add_unlock(astroponics_technology, "reactivated-charcoal")
+  if settings.startup["wood-industry-resin"].value then
+    ftech.add_unlock(astroponics_technology, "synthetic-resin")
   end
 end
 

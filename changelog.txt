@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+  Minor Features:
+    - Add Reactivated charcoal and Synthetic resin recipes (migrated for Cerys compatibility)
+  Changes:
+    - Synthetic resin now only costs fluids instead of coal, to differentiate it from normal resin
+  Bugfixes:
+    - Fix kiln smelting recipes to not auto-generate recycling recipes
+
+---------------------------------------------------------------------------------------------------
 Version: 1.2.1
   Minor Features:
     - Add kiln smelting compatibility for Hot Metals

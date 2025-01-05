@@ -46,7 +46,7 @@ data:extend({
     fuel_value = "3MJ",
     fuel_emissions_multiplier = 0.75,
     subgroup = "raw-material",
-    order = "b[chemistry]-fa[charcoal]",
+    order = "b[chemistry]-eb[charcoal]",
     inventory_move_sound = item_sounds.resource_inventory_move,
     pick_sound = item_sounds.resource_inventory_pickup,
     drop_sound = item_sounds.resource_inventory_move,
@@ -72,14 +72,14 @@ if settings.startup["wood-industry-resin"].value then
       type = "item",
       name = "resin",
       icon = "__wood-base-assets__/graphics/icons/resin.png",
-      fuel_category = "chemical",
-      fuel_value = "2MJ",
-      fuel_emissions_multiplier = 2,
       subgroup = "raw-material",
       order = "b[chemistry]-a[resin]",
       inventory_move_sound = item_sounds.sulfur_inventory_move,
       pick_sound = item_sounds.resource_inventory_pickup,
       drop_sound = item_sounds.sulfur_inventory_move,
+      fuel_category = "chemical",
+      fuel_value = "2MJ",
+      fuel_emissions_multiplier = 2,
       stack_size = 50
     }
   })

@@ -7,7 +7,7 @@ if mods["quality"] then
   end
 
   -- Replace wood results in recycling recipes with woodchips
-  local wood_ratios = {["wood"]=1.5, ["lumber"]=3}
+  local wood_ratios = {["wood"]=1.5}
   for name,recipe in pairs(data.raw.recipe) do
     if recipe.category == "recycling" and name ~= "wood-recycling" and name ~= "woodchips-recycling" then
       for _,result in pairs(recipe.results) do
