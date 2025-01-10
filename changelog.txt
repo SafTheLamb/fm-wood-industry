@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.2
+  Bugfixes:
+    - Fix crash on launch (bad migrations.lua)
+
+---------------------------------------------------------------------------------------------------
 Version: 1.3.1
   Minor Features:
     - Add option to disable adding tin ore to glass smelting
