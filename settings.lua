@@ -78,9 +78,21 @@ if mods["bztin"] then
       name = "wood-industry-tin",
       setting_type = "startup",
       default_value = true,
-      order = "m[mods]-b[bztin]"
+      order = "m[mods]-b[bztin]-a[tin]"
     }
   })
+
+  if mods["aai-industry"] then
+    data:extend({
+      {
+        type = "bool-setting",
+        name = "wood-industry-tin-glass",
+        setting_type = "startup",
+        default_value = mods["apm_power_ldinc"] == nil,
+        order = "m[mods]-b[bztin]-b[glass]"
+      }
+    })
+  end
 end
 
 if mods["bztitanium"] then

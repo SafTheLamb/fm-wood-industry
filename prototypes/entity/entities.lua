@@ -16,6 +16,7 @@ data:extend({
       {type="explosion", percent=30},
       {type="impact", percent=30}
     },
+    surface_conditions = data.raw.furnace["stone-furnace"].surface_conditions,
     collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{-1.0, -1.0}, {1.0, 1.0}},
     damaged_trigger_effect = hit_effects.rock(),

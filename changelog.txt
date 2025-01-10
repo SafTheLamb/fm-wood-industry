@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.1
+  Minor Features:
+    - Add option to disable adding tin ore to glass smelting
+    - When enabled, add foundry recipe for casting glass with molten tin
+  Changes:
+    - When Resin is enabled, plastic bars no longer cost coal since it's already used in resin production
+    - Brick kilns now copy surface conditions from stone furnace
+    - Electric kilns no longer cost brick kilns if AAI Industry is not enabled (better Cerys compat)
+
+---------------------------------------------------------------------------------------------------
 Version: 1.3.0
   Minor Features:
     - Add Reactivated charcoal and Synthetic resin recipes (migrated for Cerys compatibility)

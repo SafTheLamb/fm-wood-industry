@@ -22,8 +22,9 @@ if settings.startup["wood-industry-resin"].value then
 end
 
 if mods["space-age"] then
+  ftech.add_unlock("space-platform", "reactivated-charcoal")
+  
   local astroponics_technology = mods["astroponics"] and "astroponics" or "space-platform-thruster"
-  ftech.add_unlock(astroponics_technology, "reactivated-charcoal")
   if settings.startup["wood-industry-resin"].value then
     ftech.add_unlock(astroponics_technology, "synthetic-resin")
   end
@@ -66,6 +67,10 @@ if mods["bztin"] and settings.startup["wood-industry-tin"].value then
   if settings.startup["bztin-more-intermediates"].value == "bronze" then
     ftech.add_prereq("automation", "wood-pyrolysis")
   end
+end
+
+if mods["bztin"] and mods["aai-industry"] and mods["space-age"] and settings.startup["wood-industry-tin-glass"].value then
+  ftech.add_unlock("foundry", "casting-glass")
 end
 
 -------------------------------------------------------------------------- Air scrubbing

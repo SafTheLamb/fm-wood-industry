@@ -50,11 +50,15 @@ data:extend({
     name = "electric-kiln",
     enabled = false,
     energy_required = 5,
-    ingredients = {
+    ingredients = mods["aai-industry"] and {
       {type="item", name="brick-kiln", amount=1},
       {type="item", name="electric-furnace", amount=1},
       {type="item", name="refined-concrete", amount=10},
       {type="item", name="advanced-circuit", amount=5}
+    } or {
+      {type="item", name="advanced-circuit", amount=10},
+      {type="item", name="concrete", amount=20},
+      {type="item", name="steel-plate", amount=20}
     },
     results = {{type="item", name="electric-kiln", amount=1}}
   }
@@ -159,6 +163,32 @@ if settings.startup["wood-industry-heavy-oil-adsorption"].value then
         tertiary = {r = 0.854, g = 0.659, b = 0.576, a = 1.000}, -- #d9a892ff
         quaternary = {r = 1.000, g = 0.494, b = 0.271, a = 1.000}, -- #ff7e45ff
       }
+    }
+  })
+end
+
+if mods["bztin"] and mods["aai-industry"] and mods["space-age"] and settings.startup["wood-industry-tin-glass"].value then
+  data:extend({
+    {
+      type = "recipe",
+      name = "casting-glass",
+      icons = {
+        {icon="__aai-industry__/graphics/icons/glass.png", icon_size=64, shift={-4,4}},
+        {icon = "__bztin__/graphics/icons/molten-tin-sa.png", icon_size=64, shift={4,-4}},
+      },
+      category = "metallurgy",
+      subgroup = "vulcanus-processes",
+      order = "b[casting]-d[casting-tin-glass]",
+      energy_required = 12,
+      allow_decomposition = false,
+      auto_recycle = false,
+      allow_productivity = true,
+      enabled = false,
+      ingredients = {
+        {type="item", name="sand", amount=20},
+        {type="fluid", name="molten-tin", amount=10, fluidbox_multiplier=5},
+      },
+      results = {{type="item", name="glass", amount=5}}
     }
   })
 end

@@ -56,8 +56,7 @@ if mods["space-age"] then
 end
 
 if settings.startup["wood-industry-resin"].value then
-  frep.remove_ingredient("plastic-bar", "coal")
-  frep.add_ingredient("plastic-bar", {type="item", name="resin", amount=1})
+  frep.replace_ingredient("plastic-bar", "coal", {type="item", name="resin", amount=1})
   if mods["space-age"] then
     data.raw.recipe["resin"].category = "organic-or-chemistry"
     frep.add_ingredient("bioplastic", {type="item", name="resin", amount=1})
@@ -105,13 +104,6 @@ end
 if mods["bztin"] and settings.startup["wood-industry-tin"].value then
   data.raw.recipe["solder"].category = "kiln-smelting"
   data.raw.recipe["solder"].auto_recycle = false
-  if mods["aai-industry"] and not mods["apm_power_ldinc"] then
-    data.raw.recipe["glass"].category = "kiln-smelting"
-    data.raw.recipe["glass"].auto_recycle = false
-    frep.add_ingredient("glass", {type="item", name="tin-ore", amount=1})
-    frep.scale_ingredient("glass", "sand", {amount=5})
-    frep.scale_result("glass", "glass", {amount=5})
-  end
   if settings.startup["bztin-more-intermediates"].value == "bronze" then
     data.raw.recipe["bronze-plate"].category = "kiln-smelting"
     data.raw.recipe["bronze-plate"].auto_recycle = false
@@ -123,6 +115,18 @@ if mods["bztin"] and settings.startup["wood-industry-tin"].value then
       frep.scale_result("casting-bronze", "bronze-plate", {amount=5})
     end
   end
+end
+
+if mods["bztin"] and mods["aai-industry"] and settings.startup["wood-industry-tin-glass"].value then
+  data.raw.recipe["glass"].category = "kiln-smelting"
+  data.raw.recipe["glass"].auto_recycle = false
+  data.raw.recipe["glass"].energy_required = 5 * data.raw.recipe["glass"].energy_required
+  frep.add_ingredient("glass", {type="item", name="tin-ore", amount=1})
+  frep.scale_ingredient("glass", "sand", {amount=5})
+  frep.scale_result("glass", "glass", {amount=5})
+
+  table.insert(data.raw["simple-entity"]["fulgoran-ruin-small"].minable.results, {type="item", name="glass", amount=3})
+  table.insert(data.raw["simple-entity"]["fulgoran-ruin-medium"].minable.results, {type="item", name="glass", amount=3})
 end
 
 if mods["bztitanium"] and settings.startup["wood-industry-titanium"].value then
