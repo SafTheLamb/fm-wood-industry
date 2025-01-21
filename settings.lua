@@ -55,6 +55,13 @@ if mods["space-age"] then
       setting_type = "startup",
       default_value = true,
       order = "m[misc]-a[carbon-military]"
+    },
+    {
+      type = "bool-setting",
+      name = "wood-industry-tungsten-carbide",
+      setting_type = "startup",
+      default_value = true,
+      order = "a[carbon]-c[tungsten]"
     }
   })
 end

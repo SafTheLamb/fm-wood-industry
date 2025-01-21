@@ -2,8 +2,6 @@ local ftech = require("__fdsl__.lib.technology")
 
 -------------------------------------------------------------------------- Technology changes
 
-ftech.add_unlock("advanced-material-processing-2", "electric-kiln")
-
 if settings.startup["wood-industry-carbon-steel"].value then
   ftech.add_prereq("steel-processing", "wood-pyrolysis")
 end
@@ -24,8 +22,14 @@ end
 if mods["space-age"] then
   ftech.add_unlock("space-platform", "reactivated-charcoal")
   
-  local astroponics_technology = mods["astroponics"] and "astroponics" or "space-platform-thruster"
+  if mods["astroponics"] then
+    ftech.add_prereq("astroponics", "wood-pyrolysis-2")
+  else
+    ftech.add_prereq("planet-discovery-vulcanus", "wood-pyrolysis-2")
+  end
+
   if settings.startup["wood-industry-resin"].value then
+    local astroponics_technology = mods["astroponics"] and "astroponics" or "space-platform-thruster"
     ftech.add_unlock(astroponics_technology, "synthetic-resin")
   end
 end

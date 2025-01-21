@@ -1,6 +1,43 @@
 local sounds = require("__base__.prototypes.entity.sounds")
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 
+local function assemblerpipepicturesfrozen()
+  return mods["space-age"] and {
+    north = {
+      filename = "__space-age__/graphics/entity/frozen/assembling-machine/assembling-machine-pipe-N-frozen.png",
+      priority = "extra-high",
+      width = 71,
+      height = 38,
+      shift = util.by_pixel(2.25, 13.5),
+      scale = 0.5
+    },
+    east = {
+      filename = "__space-age__/graphics/entity/frozen/assembling-machine/assembling-machine-pipe-E-frozen.png",
+      priority = "extra-high",
+      width = 42,
+      height = 76,
+      shift = util.by_pixel(-24.5, 1),
+      scale = 0.5
+    },
+    south = {
+      filename = "__space-age__/graphics/entity/frozen/assembling-machine/assembling-machine-pipe-S-frozen.png",
+      priority = "extra-high",
+      width = 88,
+      height = 61,
+      shift = util.by_pixel(0, -31.25),
+      scale = 0.5
+    },
+    west = {
+      filename = "__space-age__/graphics/entity/frozen/assembling-machine/assembling-machine-pipe-W-frozen.png",
+      priority = "extra-high",
+      width = 39,
+      height = 73,
+      shift = util.by_pixel(25.75, 1.25),
+      scale = 0.5
+    }
+  } or nil
+end
+
 data:extend({
   {
     type = "assembling-machine",
@@ -109,7 +146,7 @@ data:extend({
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     damaged_trigger_effect = hit_effects.entity(),
-    module_slots = 2,
+    module_slots = 4,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     crafting_categories = {"kiln-smelting", "organic-or-kiln"},
     crafting_speed = 2,
@@ -119,6 +156,45 @@ data:extend({
       usage_priority = "secondary-input",
       emissions_per_minute = {pollution=1}
     },
+    fluid_boxes = {
+      {
+        production_type = "input",
+        pipe_picture = assembler3pipepictures(),
+        pipe_picture_frozen = assemblerpipepicturesfrozen(),
+        pipe_covers = pipecoverspictures(),
+        always_draw_covers = false,
+        volume = 1000,
+        pipe_connections = {{flow_direction="input",direction=defines.direction.south, position={-1, 1}}}
+      },
+      {
+        production_type = "input",
+        pipe_picture = assembler3pipepictures(),
+        pipe_picture_frozen = assemblerpipepicturesfrozen(),
+        pipe_covers = pipecoverspictures(),
+        always_draw_covers = false,
+        volume = 1000,
+        pipe_connections = {{flow_direction="input",direction=defines.direction.south, position={1, 1}}}
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler3pipepictures(),
+        pipe_picture_frozen = assemblerpipepicturesfrozen(),
+        pipe_covers = pipecoverspictures(),
+        always_draw_covers = false,
+        volume = 100,
+        pipe_connections = {{flow_direction="output", direction=defines.direction.north, position={-1, -1}}}
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler3pipepictures(),
+        pipe_picture_frozen = assemblerpipepicturesfrozen(),
+        pipe_covers = pipecoverspictures(),
+        always_draw_covers = false,
+        volume = 100,
+        pipe_connections = {{flow_direction="output", direction=defines.direction.north, position={1, -1}}}
+      }
+    },
+    fluid_boxes_off_when_no_fluid_recipe = true,
     vehicle_impact_sound = sounds.generic_impact,
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,

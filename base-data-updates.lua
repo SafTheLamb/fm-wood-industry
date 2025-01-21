@@ -23,9 +23,15 @@ end
 
 -------------------------------------------------------------------------- Recipe changes
 
+local function smelt_in_kiln(recipe_name)
+  if data.raw.recipe[recipe_name] then
+    data.raw.recipe[recipe_name].category = "kiln-smelting"
+    data.raw.recipe[recipe_name].auto_recycle = false
+  end
+end
+
 if settings.startup["wood-industry-carbon-steel"].value then
-  data.raw.recipe["steel-plate"].category = "kiln-smelting"
-  data.raw.recipe["steel-plate"].auto_recycle = false
+  smelt_in_kiln("steel-plate")
   frep.add_ingredient("steel-plate", {type="item", name="charcoal", amount=1})
   
   if mods["space-age"] then
@@ -79,7 +85,10 @@ if settings.startup["wood-industry-lubricant"].value then
 end
 
 if mods["space-age"] then
+  smelt_in_kiln("tungsten-carbide")
+  data.raw.recipe["tungsten-carbide"].energy_required = 6.4
   data.raw.recipe["burnt-spoilage"].category = "organic-or-kiln"
+  data.raw.recipe["burnt-spoilage"].allow_decomposition = false
   frep.add_ingredient("artificial-yumako-soil", {type="item", name="charcoal", amount=5})
   frep.add_ingredient("artificial-jellynut-soil", {type="item", name="charcoal", amount=5})
 end
@@ -87,12 +96,16 @@ end
 -------------------------------------------------------------------------- BZ mods
 
 if mods["bzlead"] and settings.startup["wood-industry-lead"].value then
-  data.raw.recipe["lead-plate"].category = "kiln-smelting"
-  data.raw.recipe["lead-plate"].auto_recycle = false
+  smelt_in_kiln("lead-plate")
   frep.add_ingredient("lead-plate", {type="item", name="charcoal", amount=1})
   frep.scale_ingredient("lead-plate", "lead-ore", {amount=2.5})
   frep.scale_result("lead-plate", "lead-plate", {amount=2.5})
   frep.scale_result("lead-plate", "copper-ore", {probability=2.5})
+  data.raw.recipe["lead-plate"].energy_required = 2.5 * data.raw.recipe["lead-plate"].energy_required
+
+  if data.raw.item["lead-expansion-bolt"] then
+    frep.add_ingredient("electric-kiln", {type="item", name="lead-expansion-bolt", amount=4})
+  end
 
   if mods["space-age"] then
     -- still use charcoal here instead of carbon, since its role in lead smelting is specifically a purifying agent
@@ -102,11 +115,10 @@ if mods["bzlead"] and settings.startup["wood-industry-lead"].value then
 end
 
 if mods["bztin"] and settings.startup["wood-industry-tin"].value then
-  data.raw.recipe["solder"].category = "kiln-smelting"
-  data.raw.recipe["solder"].auto_recycle = false
+  smelt_in_kiln("solder")
+  data.raw.recipe["solder"].energy_required = 6.4
   if settings.startup["bztin-more-intermediates"].value == "bronze" then
-    data.raw.recipe["bronze-plate"].category = "kiln-smelting"
-    data.raw.recipe["bronze-plate"].auto_recycle = false
+    smelt_in_kiln("bronze-plate")
     frep.add_ingredient("bronze-plate", {type="item", name="charcoal", amount=4})
     if mods["space-age"] then
       frep.add_ingredient("casting-bronze", {type="item", name="carbon", amount=1})
@@ -118,10 +130,9 @@ if mods["bztin"] and settings.startup["wood-industry-tin"].value then
 end
 
 if mods["bztin"] and mods["aai-industry"] and settings.startup["wood-industry-tin-glass"].value then
-  data.raw.recipe["glass"].category = "kiln-smelting"
-  data.raw.recipe["glass"].auto_recycle = false
+  smelt_in_kiln("glass")
   data.raw.recipe["glass"].energy_required = 5 * data.raw.recipe["glass"].energy_required
-  frep.add_ingredient("glass", {type="item", name="tin-ore", amount=1})
+  frep.add_ingredient("glass", {type="item", name="tin-plate", amount=1})
   frep.scale_ingredient("glass", "sand", {amount=5})
   frep.scale_result("glass", "glass", {amount=5})
 
@@ -130,8 +141,7 @@ if mods["bztin"] and mods["aai-industry"] and settings.startup["wood-industry-ti
 end
 
 if mods["bztitanium"] and settings.startup["wood-industry-titanium"].value then
-  data.raw.recipe["titanium-plate"].category = "kiln-smelting"
-  data.raw.recipe["titanium-plate"].auto_recycle = false
+  smelt_in_kiln("titanium-plate")
   frep.add_ingredient("titanium-plate", {type="item", name="charcoal", amount=2})
   if mods["space-age"] then
     frep.add_ingredient("titanium-in-foundry", {type="item", name="carbon", amount=1})
@@ -141,6 +151,19 @@ end
 if mods["hot-metals"] then
   table.insert(HotMetals.craftingCategories, "kiln-smelting")
   table.insert(HotMetals.craftingCategories, "organic-or-kiln")
+end
+
+if mods["bzsilicon"] then
+  data.raw.recipe["woodchips"].category = "basic-crushing-or-crafting"
+  table.insert(data.raw.furnace["basic-crusher"].crafting_categories, "basic-crushing-or-crafting")
+  for _,machine in pairs(data.raw["assembling-machine"]) do
+    for _,category in pairs(machine.crafting_categories or {}) do
+      if category == "basic-crafting" then
+        table.insert(machine.crafting_categories, "basic-crushing-or-crafting")
+        break
+      end
+    end
+  end
 end
 
 -------------------------------------------------------------------------- Air scrubbing

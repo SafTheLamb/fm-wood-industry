@@ -52,13 +52,14 @@ data:extend({
     energy_required = 5,
     ingredients = mods["aai-industry"] and {
       {type="item", name="brick-kiln", amount=1},
-      {type="item", name="electric-furnace", amount=1},
-      {type="item", name="refined-concrete", amount=10},
-      {type="item", name="advanced-circuit", amount=5}
+      {type="item", name="low-density-structure", amount=5},
+      {type="item", name="refined-concrete", amount=20},
+      {type="item", name="processing-unit", amount=5}
     } or {
-      {type="item", name="advanced-circuit", amount=10},
+      {type="item", name="processing-unit", amount=5},
       {type="item", name="concrete", amount=20},
-      {type="item", name="steel-plate", amount=20}
+      {type="item", name="steel-plate", amount=20},
+      {type="item", name="low-density-structure", amount=5}
     },
     results = {{type="item", name="electric-kiln", amount=1}}
   }
@@ -186,7 +187,7 @@ if mods["bztin"] and mods["aai-industry"] and mods["space-age"] and settings.sta
       enabled = false,
       ingredients = {
         {type="item", name="sand", amount=20},
-        {type="fluid", name="molten-tin", amount=10, fluidbox_multiplier=5},
+        {type="fluid", name="molten-tin", amount=5, fluidbox_multiplier=2},
       },
       results = {{type="item", name="glass", amount=5}}
     }
