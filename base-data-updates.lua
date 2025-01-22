@@ -86,7 +86,7 @@ end
 
 if mods["space-age"] then
   smelt_in_kiln("tungsten-carbide")
-  data.raw.recipe["tungsten-carbide"].energy_required = 6.4
+  frep.change_time("tungsten-carbide", {scale=6.4})
   data.raw.recipe["burnt-spoilage"].category = "organic-or-kiln"
   data.raw.recipe["burnt-spoilage"].allow_decomposition = false
   frep.add_ingredient("artificial-yumako-soil", {type="item", name="charcoal", amount=5})
@@ -101,7 +101,7 @@ if mods["bzlead"] and settings.startup["wood-industry-lead"].value then
   frep.scale_ingredient("lead-plate", "lead-ore", {amount=2.5})
   frep.scale_result("lead-plate", "lead-plate", {amount=2.5})
   frep.scale_result("lead-plate", "copper-ore", {probability=2.5})
-  data.raw.recipe["lead-plate"].energy_required = 2.5 * data.raw.recipe["lead-plate"].energy_required
+  frep.change_time("lead-plate", {scale=2.5})
 
   if data.raw.item["lead-expansion-bolt"] then
     frep.add_ingredient("electric-kiln", {type="item", name="lead-expansion-bolt", amount=4})
@@ -116,7 +116,7 @@ end
 
 if mods["bztin"] and settings.startup["wood-industry-tin"].value then
   smelt_in_kiln("solder")
-  data.raw.recipe["solder"].energy_required = 6.4
+  frep.change_time("solder", {scale=6.4})
   if settings.startup["bztin-more-intermediates"].value == "bronze" then
     smelt_in_kiln("bronze-plate")
     frep.add_ingredient("bronze-plate", {type="item", name="charcoal", amount=4})
@@ -131,10 +131,10 @@ end
 
 if mods["bztin"] and mods["aai-industry"] and settings.startup["wood-industry-tin-glass"].value then
   smelt_in_kiln("glass")
-  data.raw.recipe["glass"].energy_required = 5 * data.raw.recipe["glass"].energy_required
   frep.add_ingredient("glass", {type="item", name="tin-plate", amount=1})
   frep.scale_ingredient("glass", "sand", {amount=5})
   frep.scale_result("glass", "glass", {amount=5})
+  frep.change_time("glass", {scale=5})
 
   table.insert(data.raw["simple-entity"]["fulgoran-ruin-small"].minable.results, {type="item", name="glass", amount=3})
   table.insert(data.raw["simple-entity"]["fulgoran-ruin-medium"].minable.results, {type="item", name="glass", amount=3})

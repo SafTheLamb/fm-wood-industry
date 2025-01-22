@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.1
+  Changes:
+    - Reintroduce wood pyrolysis 1 for games without AAI Industry (should auto-unlock, but also it's really easy to unlock)
+  Bugfixes:
+    - Fix wood pyrolysis 2 being absent if AAI Industry is missing
+
+---------------------------------------------------------------------------------------------------
 Version: 1.4.0
   Changes:
     - Moved electric kiln to its own tech and modified its recipe (LDS + Processing Units)

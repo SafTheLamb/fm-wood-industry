@@ -8,16 +8,11 @@ if mods["space-age"] then
   chemistry_category = "organic-or-chemistry"
 end
 
-local start_with_pyrolysis = true
-if mods["aai-industry"] then
-  start_with_pyrolysis = false
-end
-
 data:extend({
   {
     type = "recipe",
     name = "brick-kiln",
-    enabled = start_with_pyrolysis,
+    enabled = false,
     ingredients = {
       {type="item", name="stone-furnace", amount=1},
       {type="item", name="stone-brick", amount=5}
@@ -28,7 +23,7 @@ data:extend({
     type = "recipe",
     name = "woodchips",
     category = carpentry_category,
-    enabled = start_with_pyrolysis,
+    enabled = false,
     allow_productivity = true,
     auto_recycle = false,
     ingredients = {{type="item", name="wood", amount=1}},
@@ -38,7 +33,7 @@ data:extend({
     type = "recipe",
     name = "charcoal",
     category = "kiln-smelting",
-    enabled = start_with_pyrolysis,
+    enabled = false,
     allow_productivity = true,
     auto_recycle = false,
     energy_required = 6.4,

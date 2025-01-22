@@ -19,41 +19,46 @@ if settings.startup["wood-industry-resin"].value then
   end
 end
 
+if settings.startup["wood-industry-heavy-oil-adsorption"].value then
+  ftech.add_unlock("advanced-oil-processing", "heavy-oil-adsorption")
+end
+
 if mods["space-age"] then
   ftech.add_unlock("space-platform", "reactivated-charcoal")
-  
-  if mods["astroponics"] then
-    ftech.add_prereq("astroponics", "wood-pyrolysis-2")
-  else
-    ftech.add_prereq("planet-discovery-vulcanus", "wood-pyrolysis-2")
-  end
 
   if settings.startup["wood-industry-resin"].value then
     local astroponics_technology = mods["astroponics"] and "astroponics" or "space-platform-thruster"
     ftech.add_unlock(astroponics_technology, "synthetic-resin")
   end
-end
 
-if mods["space-age"] and settings.startup["wood-industry-carbon-military"].value then
-  ftech.add_unlock("sulfur-processing", "carbon")
-  if mods["wood-military"] and settings.startup["wood-military-hard-mode"].value then
-    ftech.add_prereq("military-2", "sulfur-processing")
+  if settings.startup["wood-industry-carbon-military"].value then
+    ftech.add_unlock("sulfur-processing", "carbon")
+    ftech.remove_unlock("tungsten-carbide", "carbon")
+    if mods["wood-military"] and settings.startup["wood-military-hard-mode"].value then
+      ftech.add_prereq("military-2", "sulfur-processing")
+    end
   end
 
-  ftech.remove_unlock("tungsten-carbide", "carbon")
+  if mods["astroponics"] then
+    ftech.add_prereq("astroponics", "wood-pyrolysis-2")
+  else
+    ftech.add_prereq("planet-discovery-vulcanus", "wood-pyrolysis-2")
+  end
 end
 
-if settings.startup["wood-industry-heavy-oil-adsorption"].value then
-  ftech.add_unlock("advanced-oil-processing", "heavy-oil-adsorption")
+if mods["aai-industry"] then
+  ftech.add_prereq("wood-pyrolysis", "automation-science-pack")
+else
+  ftech.add_prereq("automation-science-pack", "wood-pyrolysis")
 end
 
 -------------------------------------------------------------------------- BZ mods
 
 if mods["bzlead"] and settings.startup["wood-industry-lead"].value then
+  ftech.add_unlock("wood-pyrolysis", "lead-plate")
+  ftech.add_unlock("wood-pyrolysis", "lead-chest")
   if mods["aai-industry"] then
     ftech.add_unlock("electricity", "lead-expansion-bolt")
-    ftech.add_unlock("wood-pyrolysis", "lead-plate")
-    ftech.add_unlock("wood-pyrolysis", "lead-chest")
   else
     ftech.add_unlock("electronics", "lead-expansion-bolt")
   end

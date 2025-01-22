@@ -3,6 +3,10 @@ for _,force in pairs(game.forces) do
   local recipes = force.recipes
   local mods = script.active_mods
 
+  if recipes["brick-kiln"].enabled then
+    technologies["wood-pyrolysis"].researched = true
+  end
+
   if mods["space-age"] then
     local carbon_technology = settings.startup["wood-industry-carbon-military"].value and "sulfur-processing" or "tungsten-carbide"
     recipes["carbon"].enabled = technologies[carbon_technology].researched
