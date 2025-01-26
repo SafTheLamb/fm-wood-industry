@@ -87,7 +87,7 @@ end
 if mods["space-age"] then
   smelt_in_kiln("tungsten-carbide")
   frep.change_time("tungsten-carbide", {scale=6.4})
-  data.raw.recipe["burnt-spoilage"].category = "organic-or-kiln"
+  data.raw.recipe["burnt-spoilage"].category = "organic-or-kiln-smelting"
   data.raw.recipe["burnt-spoilage"].allow_decomposition = false
   frep.add_ingredient("artificial-yumako-soil", {type="item", name="charcoal", amount=5})
   frep.add_ingredient("artificial-jellynut-soil", {type="item", name="charcoal", amount=5})
@@ -150,7 +150,7 @@ end
 
 if mods["hot-metals"] then
   table.insert(HotMetals.craftingCategories, "kiln-smelting")
-  table.insert(HotMetals.craftingCategories, "organic-or-kiln")
+  table.insert(HotMetals.craftingCategories, "organic-or-kiln-smelting")
 end
 
 if mods["bzsilicon"] then
@@ -184,7 +184,7 @@ end
 -------------------------------------------------------------------------- Entity changes
 
 if mods["space-age"] then
-  table.insert(data.raw["assembling-machine"]["biochamber"].crafting_categories, "organic-or-kiln")
+  table.insert(data.raw["assembling-machine"]["biochamber"].crafting_categories, "organic-or-kiln-smelting")
 
   if settings.startup["wood-industry-resin"].value then
     data.raw.tree["ashland-lichen-tree-flaming"].minable.results = {

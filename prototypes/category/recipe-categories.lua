@@ -5,7 +5,7 @@ data:extend({
   },
   {
     type = "recipe-category",
-    name = "organic-or-kiln"
+    name = "organic-or-kiln-smelting"
   }
 })
 

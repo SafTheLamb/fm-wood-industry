@@ -57,7 +57,7 @@ data:extend({
     collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{-1.0, -1.0}, {1.0, 1.0}},
     damaged_trigger_effect = hit_effects.rock(),
-    crafting_categories = {"kiln-smelting", "organic-or-kiln"},
+    crafting_categories = {"kiln-smelting", "organic-or-kiln-smelting"},
     crafting_speed = 1,
     energy_usage = "90kW",
     energy_source = {
@@ -148,7 +148,7 @@ data:extend({
     damaged_trigger_effect = hit_effects.entity(),
     module_slots = 4,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-    crafting_categories = {"kiln-smelting", "organic-or-kiln"},
+    crafting_categories = {"kiln-smelting", "organic-or-kiln-smelting"},
     crafting_speed = 2,
     energy_usage = "180kW",
     energy_source = {
