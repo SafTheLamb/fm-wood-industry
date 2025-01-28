@@ -71,8 +71,11 @@ end
 
 if settings.startup["wood-industry-heavy-oil-adsorption"].value then
   if mods["aai-industry"] then
-    frep.add_ingredient("advanced-oil-processing", {type="item", name="charcoal", amount=1})
+    frep.add_ingredient("oil-processing-heavy", {type="item", name="coal", amount=1})
+    frep.add_ingredient("advanced-oil-processing", {type="item", name="charcoal", amount=2})
     data.raw.recipe["advanced-oil-processing"].order = "a[oil-processing]-b[advanced-oil-processing]b"
+  else
+    frep.add_ingredient("advanced-oil-processing", {type="item", name="charcoal", amount=2})
   end
 end
 

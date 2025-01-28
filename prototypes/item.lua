@@ -11,7 +11,8 @@ data:extend({
     pick_sound = item_sounds.brick_inventory_pickup,
     drop_sound = item_sounds.brick_inventory_move,
     place_result = "brick-kiln",
-    stack_size = 50
+    stack_size = 50,
+    weight = 20*kg
   },
   {
     type = "item",
@@ -30,7 +31,8 @@ data:extend({
     inventory_move_sound = item_sounds.wood_inventory_move,
     pick_sound = item_sounds.wood_inventory_pickup,
     drop_sound = item_sounds.wood_inventory_move,
-    stack_size = 200
+    stack_size = 200,
+    weight = 1*kg
   },
   {
     type = "item",
@@ -50,7 +52,8 @@ data:extend({
     inventory_move_sound = item_sounds.resource_inventory_move,
     pick_sound = item_sounds.resource_inventory_pickup,
     drop_sound = item_sounds.resource_inventory_move,
-    stack_size = 50
+    stack_size = 50,
+    weight = 2*kg
   },
   {
     type = "item",
@@ -62,7 +65,8 @@ data:extend({
     pick_sound = item_sounds.electric_large_inventory_pickup,
     drop_sound = item_sounds.electric_large_inventory_move,
     place_result = "electric-kiln",
-    stack_size = 50
+    stack_size = 50,
+    weight = 20*kg
   },
   {
     type = "item",
@@ -81,7 +85,8 @@ data:extend({
     inventory_move_sound = item_sounds.wood_inventory_move,
     pick_sound = item_sounds.wood_inventory_pickup,
     drop_sound = item_sounds.wood_inventory_move,
-    stack_size = 200
+    stack_size = 200,
+    weight = 1*kg
   }
 })
 
@@ -99,7 +104,8 @@ if settings.startup["wood-industry-resin"].value then
       fuel_category = "chemical",
       fuel_value = "2MJ",
       fuel_emissions_multiplier = 2,
-      stack_size = 50
+      stack_size = 50,
+      weight = 5*kg
     }
   })
 end

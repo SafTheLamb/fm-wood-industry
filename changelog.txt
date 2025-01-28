@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.2
+  Minor Features:
+    - With AAI Industry and heavy oil adsorption enabled, add coal to crude oil processing to differentiate the two recipes
+  Changes:
+    - Increase charcoal in advanced oil processing from 1 to 2
+    - Change internal name organic-or-kiln recipe category to organic-or-kiln-smelting
+    - Explicitly specify weight of items, allowing 50 electric kilns to be shipped in rockets, same as furnaces
+
+---------------------------------------------------------------------------------------------------
 Version: 1.4.1
   Changes:
     - Reintroduce wood pyrolysis 1 for games without AAI Industry (should auto-unlock, but also it's really easy to unlock)
