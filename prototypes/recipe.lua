@@ -38,7 +38,7 @@ data:extend({
     auto_recycle = false,
     energy_required = 6.4,
     ingredients = {{type="item", name="woodchips", amount=3}},
-    results = {{type="item", name="charcoal", amount=1}}
+    results = {{type="item", name="charcoal", amount=2}}
   },
   {
     type = "recipe",

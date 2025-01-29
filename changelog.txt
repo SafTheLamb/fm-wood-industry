@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.3
+  Changes:
+    - Localize mod setting names
+    - Buffed yield of woodchip pyrolysis from 1 to 2 charcoal
+
+---------------------------------------------------------------------------------------------------
 Version: 1.4.2
   Minor Features:
     - With AAI Industry and heavy oil adsorption enabled, add coal to crude oil processing to differentiate the two recipes
