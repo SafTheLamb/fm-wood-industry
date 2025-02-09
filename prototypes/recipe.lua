@@ -71,9 +71,30 @@ if settings.startup["wood-industry-resin"].value then
       auto_recycle = false,
       energy_required = 1,
       ingredients = {
-        {type="item", name="woodchips", amount=5},
+        {type="item", name="wood", amount=2},
         {type="item", name="coal", amount=1},
         {type="fluid", name="steam", amount=50}
+      },
+      results = {{type="item", name="resin", amount=2}}
+    },
+    {
+      type = "recipe",
+      name = "synthetic-resin",
+      localised_name = {"recipe-name.synthetic-resin"},
+      icons = {
+        {icon="__wood-base-assets__/graphics/icons/resin.png"},
+        {icon="__base__/graphics/icons/fluid/sulfuric-acid.png", shift={-8,-8}, scale=0.3}
+      },
+      category = "chemistry-or-cryogenics",
+      subgroup = "raw-material",
+      order = "n",
+      enabled = false,
+      allow_productivity = true,
+      auto_recycle = false,
+      allow_decomposition = false,
+      ingredients = {
+        {type="fluid", name="light-oil", amount=20},
+        {type="fluid", name="sulfuric-acid", amount=10}
       },
       results = {{type="item", name="resin", amount=2}}
     }
@@ -105,31 +126,6 @@ if mods["space-age"] then
       results = {{type="item", name="charcoal", amount=2}}
     }
   })
-
-  if settings.startup["wood-industry-resin"].value then
-    data:extend({
-      {
-        type = "recipe",
-        name = "synthetic-resin",
-        localised_name = {"recipe-name.synthetic-resin"},
-        icons = {
-          {icon="__wood-base-assets__/graphics/icons/resin.png"},
-          {icon="__base__/graphics/icons/fluid/sulfuric-acid.png", shift={-8,-8}, scale=0.3}
-        },
-        category = "organic-or-chemistry",
-        subgroup = "raw-material",
-        order = "n",
-        enabled = false,
-        allow_productivity = true,
-        auto_recycle = false,
-        ingredients = {
-          {type="fluid", name="light-oil", amount=20},
-          {type="fluid", name="sulfuric-acid", amount=10}
-        },
-        results = {{type="item", name="resin", amount=2}}
-      }
-    })
-  end
 end
 
 if settings.startup["wood-industry-heavy-oil-adsorption"].value then

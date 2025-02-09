@@ -1,4 +1,5 @@
 local frep = require("__fdsl__.lib.recipe")
+local ftech = require("__fdsl__.lib.technology")
 
 -------------------------------------------------------------------------- Item changes
 
@@ -96,6 +97,103 @@ if mods["space-age"] then
   frep.add_ingredient("artificial-jellynut-soil", {type="item", name="charcoal", amount=5})
 end
 
+-------------------------------------------------------------------------- Technology changes
+
+if settings.startup["wood-industry-carbon-steel"].value then
+  ftech.add_prereq("steel-processing", "wood-pyrolysis")
+end
+
+if settings.startup["wood-industry-resin"].value then
+  ftech.add_prereq("advanced-oil-processing", "synthetic-resin")
+
+  if not (mods["any-planet-start"] and settings.startup["aps-planet"].value == "fulgora") then
+    ftech.add_prereq("plastics", "resin-processing")
+  end
+
+  if mods["early-agriculture"] then
+    ftech.add_prereq("resin-processing", "basic-agriculture")
+  end
+  if mods["aai-industry"] then
+    ftech.add_prereq("resin-processing", "steam-power")
+  end
+end
+
+if settings.startup["wood-industry-heavy-oil-adsorption"].value then
+  ftech.add_unlock("advanced-oil-processing", "heavy-oil-adsorption")
+end
+
+if mods["space-age"] then
+  ftech.add_unlock("space-platform", "reactivated-charcoal")
+
+  if settings.startup["wood-industry-carbon-military"].value then
+    ftech.add_unlock("sulfur-processing", "carbon")
+    ftech.remove_unlock("tungsten-carbide", "carbon")
+    if mods["wood-military"] and settings.startup["wood-military-hard-mode"].value then
+      ftech.add_prereq("military-2", "sulfur-processing")
+    end
+  end
+
+  ftech.add_prereq("planet-discovery-vulcanus", "wood-pyrolysis-2")
+end
+
+if mods["aai-industry"] then
+  ftech.add_prereq("wood-pyrolysis", "automation-science-pack")
+else
+  ftech.add_prereq("automation-science-pack", "wood-pyrolysis")
+end
+
+-------------------------------------------------------------------------- BZ mods
+
+if mods["bzlead"] and settings.startup["wood-industry-lead"].value then
+  ftech.add_unlock("wood-pyrolysis", "lead-plate")
+  ftech.add_unlock("wood-pyrolysis", "lead-chest")
+  if mods["aai-industry"] then
+    ftech.add_unlock("electricity", "lead-expansion-bolt")
+  else
+    ftech.add_unlock("electronics", "lead-expansion-bolt")
+  end
+end
+
+if mods["bztin"] and settings.startup["wood-industry-tin"].value then
+  if mods["aai-industry"] then
+    ftech.add_unlock("wood-pyrolysis", "solder")
+    ftech.add_prereq("electricity", "wood-pyrolysis")
+    if not mods["apm_power_ldinc"] then
+      ftech.add_prereq("glass-processing", "wood-pyrolysis")
+    end
+    ftech.add_prereq("basic-fluid-handling", "wood-pyrolysis")
+  end
+  if settings.startup["bztin-more-intermediates"].value == "bronze" then
+    ftech.add_prereq("automation", "wood-pyrolysis")
+  end
+end
+
+if mods["bztin"] and mods["aai-industry"] and mods["space-age"] and settings.startup["wood-industry-tin-glass"].value then
+  ftech.add_unlock("foundry", "casting-glass")
+end
+
+-------------------------------------------------------------------------- Air scrubbing
+
+if mods["atan-air-scrubbing"] and mods["space-age"] then
+  local filter_ingredient = "coal"
+  if mods["space-age"] then
+    filter_ingredient = "carbon"
+    ftech.add_prereq("atan-pollution-scrubbing", "space-science-pack")
+    ftech.remove_prereq("atan-pollution-scrubbing", "space-platform")
+    ftech.add_cost_ingredient("atan-pollution-scrubbing", "space-science-pack")
+
+    ftech.add_prereq("atan-spore-scrubbing", "carbon-fiber")
+    ftech.add_cost_ingredient("atan-spore-scrubbing", "space-science-pack")
+    frep.replace_ingredient("atan-spore-filter", "plastic-bar", "carbon-fiber")
+    frep.replace_ingredient("atan-spore-filter", filter_ingredient, {type="item", name="charcoal", amount=5})
+    frep.add_ingredient("atan-spore-filter-cleaning", {type="item", name="charcoal", amount=5})
+  end
+
+  frep.replace_ingredient("atan-pollution-filter", "plastic-bar", "low-density-structure")
+  frep.replace_ingredient("atan-pollution-filter", filter_ingredient, {type="item", name="charcoal", amount=5})
+  frep.add_ingredient("atan-pollution-filter-cleaning", {type="item", name="charcoal", amount=2})
+end
+
 -------------------------------------------------------------------------- BZ mods
 
 if mods["bzlead"] and settings.startup["wood-industry-lead"].value then
@@ -154,34 +252,6 @@ end
 if mods["hot-metals"] then
   table.insert(HotMetals.craftingCategories, "kiln-smelting")
   table.insert(HotMetals.craftingCategories, "organic-or-kiln-smelting")
-end
-
-if mods["bzsilicon"] then
-  data.raw.recipe["woodchips"].category = "basic-crushing-or-crafting"
-  table.insert(data.raw.furnace["basic-crusher"].crafting_categories, "basic-crushing-or-crafting")
-  for _,machine in pairs(data.raw["assembling-machine"]) do
-    for _,category in pairs(machine.crafting_categories or {}) do
-      if category == "basic-crafting" then
-        table.insert(machine.crafting_categories, "basic-crushing-or-crafting")
-        break
-      end
-    end
-  end
-end
-
--------------------------------------------------------------------------- Air scrubbing
-
-if mods["atan-air-scrubbing"] then
-  local filter_ingredient = "coal"
-  if mods["space-age"] then
-    filter_ingredient = "carbon"
-    frep.replace_ingredient("atan-spore-filter", "plastic-bar", "carbon-fiber")
-    frep.replace_ingredient("atan-spore-filter", filter_ingredient, {type="item", name="charcoal", amount=5})
-    frep.add_ingredient("atan-spore-filter-cleaning", {type="item", name="charcoal", amount=5})
-  end
-  frep.replace_ingredient("atan-pollution-filter", "plastic-bar", "low-density-structure")
-  frep.replace_ingredient("atan-pollution-filter", filter_ingredient, {type="item", name="charcoal", amount=5})
-  frep.add_ingredient("atan-pollution-filter-cleaning", {type="item", name="charcoal", amount=2})
 end
 
 -------------------------------------------------------------------------- Entity changes

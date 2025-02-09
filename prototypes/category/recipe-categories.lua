@@ -8,12 +8,3 @@ data:extend({
     name = "organic-or-kiln-smelting"
   }
 })
-
-if mods["bzsilicon"] then
-  data:extend({
-    {
-      type = "recipe-category",
-      name = "basic-crushing-or-crafting"
-    }
-  })
-end

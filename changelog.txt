@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.0
+  Major Features:
+    - Change resin to cost wood instead of woodchips, to make synthetic resin more valuable
+  Bugfixes:
+    - Fix softlock with woodchips and basic crushers from BZ Silicon / BZ Carbon combined with Lignumis
+    - Fix compatibility with Simply Greenhouse
+
+---------------------------------------------------------------------------------------------------
 Version: 1.4.3
   Changes:
     - Localize mod setting names
