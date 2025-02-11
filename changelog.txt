@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.1
+  Bugfixes:
+    - Fix crash when loading without Space Age
+
+---------------------------------------------------------------------------------------------------
 Version: 1.5.0
   Major Features:
     - Change resin to cost wood instead of woodchips, to make synthetic resin more valuable

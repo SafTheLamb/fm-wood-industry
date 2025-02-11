@@ -85,7 +85,7 @@ if settings.startup["wood-industry-resin"].value then
         {icon="__wood-base-assets__/graphics/icons/resin.png"},
         {icon="__base__/graphics/icons/fluid/sulfuric-acid.png", shift={-8,-8}, scale=0.3}
       },
-      category = "chemistry-or-cryogenics",
+      category = mods["space-age"] and "chemistry-or-cryogenics" or "chemistry",
       subgroup = "raw-material",
       order = "n",
       enabled = false,
