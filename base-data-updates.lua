@@ -22,6 +22,14 @@ if settings.startup["wood-industry-nerf-wood-fuel"].value then
   end
 end
 
+if mods["deadlock-beltboxes-loaders"] then
+  deadlock.add_stack("woodchips", nil, data.raw.technology["deadlock-stacking-0"] and "deadlock-stacking-0" or "deadlock-stacking-1")
+  deadlock.add_stack("charcoal", nil, data.raw.technology["deadlock-stacking-0"] and "deadlock-stacking-0" or "deadlock-stacking-1")
+  if settings.startup["wood-industry-resin"].value then
+    deadlock.add_stack("resin", nil, "deadlock-stacking-2")
+  end
+end
+
 -------------------------------------------------------------------------- Recipe changes
 
 local function smelt_in_kiln(recipe_name)
