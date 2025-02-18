@@ -155,11 +155,7 @@ end
 if mods["bzlead"] and settings.startup["wood-industry-lead"].value then
   ftech.add_unlock("wood-pyrolysis", "lead-plate")
   ftech.add_unlock("wood-pyrolysis", "lead-chest")
-  if mods["aai-industry"] then
-    ftech.add_unlock("electricity", "lead-expansion-bolt")
-  else
-    ftech.add_unlock("electronics", "lead-expansion-bolt")
-  end
+  ftech.add_unlock("wood-pyrolysis", "lead-expansion-bolt")
 end
 
 if mods["bztin"] and settings.startup["wood-industry-tin"].value then

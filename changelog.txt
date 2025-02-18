@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.3
+  Changes:
+    - Fix location and scale of recipe icons in alt mode for kilns
+  Compatibility:
+    - Move unlocking lead expansion bolt to Wood pyrolysis when AAI Industry is enabled, since gun turrets need them too
+  Locale:
+    - Add zh-CN localization (credit: jackychen2005). Thank you!
+
+---------------------------------------------------------------------------------------------------
 Version: 1.5.2
   Compatibility:
     - Add support for Deadlock Beltboxes and Loaders

@@ -87,6 +87,10 @@ data:extend({
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     vehicle_impact_sound = sounds.car_stone_impact,
+    allowed_effects = {"speed", "consumption", "pollution"},
+    effect_receiver = {uses_module_effects = false, uses_beacon_effects = false, uses_surface_effects = true},
+    impact_category = "stone",
+    icon_draw_specification = {scale = 0.66, shift = {0, -0.1}},
     working_sound = {
       sound = {
         filename = "__wood-base-assets__/sound/brick-kiln.ogg",
@@ -147,6 +151,10 @@ data:extend({
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     damaged_trigger_effect = hit_effects.entity(),
     module_slots = 4,
+    icon_draw_specification = {shift = {0, -0.1}},
+    icons_positioning = {
+      {inventory_index = defines.inventory.furnace_modules, shift = {0, 0.8}}
+    },
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     crafting_categories = {"kiln-smelting", "organic-or-kiln-smelting"},
     crafting_speed = 2,

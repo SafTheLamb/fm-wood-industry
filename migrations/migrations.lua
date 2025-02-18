@@ -21,6 +21,14 @@ for _,force in pairs(game.forces) do
     recipes["casting-glass"].enabled = technologies["foundry"].researched
   end
 
+  if mods["bzlead"] and settings.startup["wood-industry-lead"].value then
+    if technologies["wood-pyrolysis"].researched then
+      recipes["lead-plate"].enabled = true
+      recipes["lead-chest"].enabled = true
+      recipes["lead-expansion-bolt"].enabled = true
+    end
+  end
+
   if settings.startup["wood-industry-heavy-oil-adsorption"].value then
     recipes["heavy-oil-adsorption"].enabled = technologies["advanced-oil-processing"].researched
   end
