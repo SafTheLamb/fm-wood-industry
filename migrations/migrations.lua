@@ -8,13 +8,11 @@ for _,force in pairs(game.forces) do
   end
 
   if mods["space-age"] then
-    local carbon_technology = settings.startup["wood-industry-carbon-military"].value and "sulfur-processing" or "tungsten-carbide"
-    recipes["carbon"].enabled = technologies[carbon_technology].researched
-
     recipes["reactivated-charcoal"].enabled = technologies["space-platform"].researched
+  end
 
-    local astroponics_technology = mods["astroponics"] and "astroponics" or "space-platform-thruster"
-    recipes["synthetic-resin"].enabled = technologies[astroponics_technology].researched
+  if settings.startup["wood-industry-resin"].value then
+    recipes["synthetic-resin"].enabled = technologies["advanced-oil-processing"].researched
   end
 
   if mods["bztin"] and mods["aai-industry"] and mods["space-age"] and settings.startup["wood-industry-tin-glass"].value then

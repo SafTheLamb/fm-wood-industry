@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.0
+  Changes:
+    - Buffed heavy oil adsorption by increasing petroleum gas yield from 40 to 60 (+50%)
+    - Removed carbon military setting
+  Bugfixes:
+    - Fix prerequisites for resin processing technology
+    - Fix migrations for synthetic resin
+
+---------------------------------------------------------------------------------------------------
 Version: 1.5.3
   Changes:
     - Fix location and scale of recipe icons in alt mode for kilns

@@ -59,15 +59,6 @@ if mods["space-age"] then
 
   frep.add_ingredient("artificial-yumako-soil", {type="item", name="charcoal", amount=12})
   frep.add_ingredient("artificial-jellynut-soil", {type="item", name="charcoal", amount=12})
-
-  if settings.startup["wood-industry-carbon-military"].value then
-    if mods["wood-military"] and settings.startup["wood-military-hard-mode"].value then
-      frep.replace_ingredient("grenade", "coal", {type="item", name="carbon", amount=4})
-    end
-    frep.replace_ingredient("explosives", "coal", "carbon")
-    frep.replace_ingredient("poison-capsule", "coal", {type="item", name="carbon", amount=6})
-    frep.replace_ingredient("slowdown-capsule", "coal", {type="item", name="carbon", amount=4})
-  end
 end
 
 if settings.startup["wood-industry-resin"].value then
@@ -132,14 +123,6 @@ end
 
 if mods["space-age"] then
   ftech.add_unlock("space-platform", "reactivated-charcoal")
-
-  if settings.startup["wood-industry-carbon-military"].value then
-    ftech.add_unlock("sulfur-processing", "carbon")
-    ftech.remove_unlock("tungsten-carbide", "carbon")
-    if mods["wood-military"] and settings.startup["wood-military-hard-mode"].value then
-      ftech.add_prereq("military-2", "sulfur-processing")
-    end
-  end
 
   ftech.add_prereq("planet-discovery-vulcanus", "wood-pyrolysis-2")
 end

@@ -146,7 +146,7 @@ if settings.startup["wood-industry-heavy-oil-adsorption"].value then
         {type="item", name="charcoal", amount=1}
       },
       results = {
-        {type="fluid", name="petroleum-gas", amount=40}
+        {type="fluid", name="petroleum-gas", amount=60}
       },
       main_product = "",
       crafting_machine_tint = {

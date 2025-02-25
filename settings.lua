@@ -48,14 +48,6 @@ if mods["space-age"] then
       default_value = true,
       order = "a[carbon]-b[buff]"
     },
-    -- whether to make military recipes require carbon instead of coal
-    {
-      type = "bool-setting",
-      name = "wood-industry-carbon-military",
-      setting_type = "startup",
-      default_value = true,
-      order = "m[misc]-a[carbon-military]"
-    },
     {
       type = "bool-setting",
       name = "wood-industry-tungsten-carbide",

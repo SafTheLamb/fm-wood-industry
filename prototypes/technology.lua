@@ -48,7 +48,7 @@ if settings.startup["wood-industry-resin"].value then
       name = "resin-processing",
       icon = "__wood-base-assets__/graphics/technology/resin-processing.png",
       icon_size = 256,
-      prerequisites = {"automation-2"},
+      prerequisites = {"automation-2", "oil-processing"},
       effects = {{type="unlock-recipe", recipe="resin"}},
       unit = {
         count = 100,
