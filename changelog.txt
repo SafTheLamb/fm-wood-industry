@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.1
+  Bugfixes:
+    - Remove unused dried woodchips
+
+---------------------------------------------------------------------------------------------------
 Version: 1.6.0
   Changes:
     - Buffed heavy oil adsorption by increasing petroleum gas yield from 40 to 60 (+50%)

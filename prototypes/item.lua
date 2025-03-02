@@ -70,26 +70,6 @@ data:extend({
     stack_size = 50,
     weight = 20*kg
   },
-  {
-    type = "item",
-    name = "dried-woodchips",
-    icon = "__wood-base-assets__/graphics/icons/dried-woodchips.png",
-    pictures = {
-      {size=64, filename="__wood-base-assets__/graphics/icons/dried-woodchips.png", scale=0.5, mipmap_count=4},
-      {size=64, filename="__wood-base-assets__/graphics/icons/dried-woodchips-1.png", scale=0.5, mipmap_count=4},
-      {size=64, filename="__wood-base-assets__/graphics/icons/dried-woodchips-2.png", scale=0.5, mipmap_count=4},
-      {size=64, filename="__wood-base-assets__/graphics/icons/dried-woodchips-3.png", scale=0.5, mipmap_count=4}
-    },
-    fuel_category = "chemical",
-    fuel_value = "1.5MJ",
-    subgroup = "raw-material",
-    order = "A[wood]-b[dry-chips]",
-    inventory_move_sound = item_sounds.wood_inventory_move,
-    pick_sound = item_sounds.wood_inventory_pickup,
-    drop_sound = item_sounds.wood_inventory_move,
-    stack_size = 200,
-    weight = 1*kg
-  }
 })
 
 if settings.startup["wood-industry-resin"].value then
