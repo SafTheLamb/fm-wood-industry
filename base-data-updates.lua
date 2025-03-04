@@ -103,7 +103,7 @@ if settings.startup["wood-industry-carbon-steel"].value then
 end
 
 if settings.startup["wood-industry-resin"].value then
-  ftech.add_prereq("advanced-oil-processing", "synthetic-resin")
+  ftech.add_unlock("advanced-oil-processing", "synthetic-resin")
 
   if not (mods["any-planet-start"] and settings.startup["aps-planet"].value == "fulgora") then
     ftech.add_prereq("plastics", "resin-processing")
