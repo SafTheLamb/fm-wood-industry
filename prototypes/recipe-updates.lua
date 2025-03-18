@@ -1,15 +1,23 @@
 local frep = require("__fdsl__.lib.recipe")
 
-if data.raw["recipe-category"]["basic-crushing-or-crafting"] then
-  data.raw.recipe["woodchips"].category = "basic-crushing-or-crafting"
+if data.raw["recipe-category"]["basic-crushing"] and not data.raw["recipe-category"]["basic-crushing-or-crafting"] then
+  data:extend({
+    {
+      type = "recipe-category",
+      name = "basic-crushing-or-crafting"
+    }
+  })
+end
 
-  table.insert(data.raw.furnace["basic-crusher"].crafting_categories, "basic-crushing-or-crafting")
+if data.raw["recipe-category"]["basic-crushing-or-crafting"] then
   table.insert(data.raw.character.character.crafting_categories, "basic-crushing-or-crafting")
-  for _,machine in pairs(data.raw["assembling-machine"]) do
-    for _,category in pairs(machine.crafting_categories or {}) do
-      if category == "basic-crafting" then
-        table.insert(machine.crafting_categories, "basic-crushing-or-crafting")
-        break
+  for _,entity_type in pairs({"assembling-machine", "furnace"}) do
+    for _,machine in pairs(data.raw[entity_type]) do
+      for _,category in pairs(machine.crafting_categories or {}) do
+        if category == "basic-crafting" then
+          table.insert(machine.crafting_categories, "basic-crushing-or-crafting")
+          break
+        end
       end
     end
   end

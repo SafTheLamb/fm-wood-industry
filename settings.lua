@@ -1,13 +1,4 @@
 data:extend({
-  -- whether you need charcoal / carbon to forge steel, also affects tungsten
-  {
-    type = "bool-setting",
-    name = "wood-industry-carbon-steel",
-    setting_type = "startup",
-    default_value = true,
-    order = "a[carbon]-a[steel]"
-  },
-  -- whether to add resin as a necessary resource for 
   {
     type = "bool-setting",
     name = "wood-industry-resin",
@@ -37,71 +28,3 @@ data:extend({
     order = "c[adsorption]-b[lubricant]"
   }
 })
-
-if mods["space-age"] then
-  data:extend({
-    -- whether to buff carbon, by doubling steel output
-    {
-      type = "bool-setting",
-      name = "wood-industry-carbon-buff",
-      setting_type = "startup",
-      default_value = true,
-      order = "a[carbon]-b[buff]"
-    },
-    {
-      type = "bool-setting",
-      name = "wood-industry-tungsten-carbide",
-      setting_type = "startup",
-      default_value = true,
-      order = "a[carbon]-c[tungsten]"
-    }
-  })
-end
-
-if mods["bzlead"] then
-  data:extend({
-    {
-      type = "bool-setting",
-      name = "wood-industry-lead",
-      setting_type = "startup",
-      default_value = true,
-      order = "m[mods]-a[bzlead]"
-    }
-  })
-end
-
-if mods["bztin"] then
-  data:extend({
-    {
-      type = "bool-setting",
-      name = "wood-industry-tin",
-      setting_type = "startup",
-      default_value = true,
-      order = "m[mods]-b[bztin]-a[tin]"
-    }
-  })
-
-  if mods["aai-industry"] then
-    data:extend({
-      {
-        type = "bool-setting",
-        name = "wood-industry-tin-glass",
-        setting_type = "startup",
-        default_value = mods["apm_power_ldinc"] == nil,
-        order = "m[mods]-b[bztin]-b[glass]"
-      }
-    })
-  end
-end
-
-if mods["bztitanium"] then
-  data:extend({
-    {
-      type = "bool-setting",
-      name = "wood-industry-titanium",
-      setting_type = "startup",
-      default_value = true,
-      order = "m[mods]-c[bztitanium]"
-    }
-  })
-end

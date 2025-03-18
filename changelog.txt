@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+  Major Features:
+    - Kilns have been moved to their own mod, Alloy Smelting, which is now a required dependency
+  Changes:
+    - Resin now requires 50% more wood
+  Compatibility:
+    - Woodchips can now be crushed in machines from the new mod Early Crushing
+    - Charcoal can now be further processed into coke for use in kiln smelting
+    - Resin is now made from crushed coal with Early Crushing when enabled
+
+---------------------------------------------------------------------------------------------------
 Version: 1.6.2
   Bugfixes:
     - Fix synthetic resin not being unlocked

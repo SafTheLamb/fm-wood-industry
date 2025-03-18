@@ -1,28 +1,14 @@
-local carpentry_category = "crafting"
-if mods["wood-logistics"] and settings.startup["wood-logistics-lumber-mill"].value then
-  carpentry_category = "crafting-or-carpentry"
-end
+local carpentry_category = mods["wood-logistics"] and settings.startup["wood-logistics-lumber-mill"].value and "crafting-or-carpentry" or "crafting"
+local crushing_category = mods["crushing-industry"] and "basic-crushing-or-hand-crafting" or carpentry_category
+local coal_item = mods["crushing-industry"] and settings.startup["crushing-industry-coal"].value and "crushed-coal" or "coal"
 
-local chemistry_category = "chemistry"
-if mods["space-age"] then
-  chemistry_category = "organic-or-chemistry"
-end
+local chemistry_category = mods["space-age"] and "organic-or-chemistry" or "chemistry"
 
 data:extend({
   {
     type = "recipe",
-    name = "brick-kiln",
-    enabled = false,
-    ingredients = {
-      {type="item", name="stone-furnace", amount=1},
-      {type="item", name="stone-brick", amount=5}
-    },
-    results = {{type="item", name="brick-kiln", amount=1}}
-  },
-  {
-    type = "recipe",
     name = "woodchips",
-    category = carpentry_category,
+    category = crushing_category or carpentry_category or nil,
     enabled = false,
     allow_productivity = true,
     auto_recycle = false,
@@ -40,24 +26,6 @@ data:extend({
     ingredients = {{type="item", name="woodchips", amount=3}},
     results = {{type="item", name="charcoal", amount=2}}
   },
-  {
-    type = "recipe",
-    name = "electric-kiln",
-    enabled = false,
-    energy_required = 5,
-    ingredients = mods["aai-industry"] and {
-      {type="item", name="brick-kiln", amount=1},
-      {type="item", name="low-density-structure", amount=5},
-      {type="item", name="refined-concrete", amount=20},
-      {type="item", name="processing-unit", amount=5}
-    } or {
-      {type="item", name="processing-unit", amount=5},
-      {type="item", name="concrete", amount=20},
-      {type="item", name="steel-plate", amount=20},
-      {type="item", name="low-density-structure", amount=5}
-    },
-    results = {{type="item", name="electric-kiln", amount=1}}
-  }
 })
 
 if settings.startup["wood-industry-resin"].value then
@@ -71,8 +39,8 @@ if settings.startup["wood-industry-resin"].value then
       auto_recycle = false,
       energy_required = 1,
       ingredients = {
-        {type="item", name="wood", amount=2},
-        {type="item", name="coal", amount=1},
+        {type="item", name="wood", amount=3},
+        mods["crushing-industry"] and settings.startup["crushing-industry-coal"].value and {type="item", name="crushed-coal", amount=2} or {type="item", name="coal", amount=1},
         {type="fluid", name="steam", amount=50}
       },
       results = {{type="item", name="resin", amount=2}}
@@ -159,28 +127,22 @@ if settings.startup["wood-industry-heavy-oil-adsorption"].value then
   })
 end
 
-if mods["bztin"] and mods["aai-industry"] and mods["space-age"] and settings.startup["wood-industry-tin-glass"].value then
+if settings.startup["alloy-smelting-coke"].value then
   data:extend({
     {
       type = "recipe",
-      name = "casting-glass",
+      name = "coke-from-charcoal",
       icons = {
-        {icon="__aai-industry__/graphics/icons/glass.png", icon_size=64, shift={-4,4}},
-        {icon = "__bztin__/graphics/icons/molten-tin-sa.png", icon_size=64, shift={4,-4}},
+        {icon="__wood-base-assets__/graphics/icons/charcoal.png", shift={-12, -12}, scale=0.4},
+        {icon="__alloy-smelting__/graphics/icons/coke.png", draw_background=true}
       },
-      category = "metallurgy",
-      subgroup = "vulcanus-processes",
-      order = "b[casting]-d[casting-tin-glass]",
-      energy_required = 12,
-      allow_decomposition = false,
-      auto_recycle = false,
-      allow_productivity = true,
+      category = "organic-or-kiln-smelting",
       enabled = false,
-      ingredients = {
-        {type="item", name="sand", amount=20},
-        {type="fluid", name="molten-tin", amount=5, fluidbox_multiplier=2},
-      },
-      results = {{type="item", name="glass", amount=5}}
+      allow_productivity = true,
+      auto_recycle = false,
+      energy_required = 6.4,
+      ingredients = {{type="item", name="charcoal", amount=1}},
+      results = {{type="item", name="coke", amount=2}}
     }
   })
 end
