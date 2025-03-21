@@ -105,8 +105,6 @@ end
 if mods["space-age"] then
   frep.add_ingredient("artificial-yumako-soil", {type="item", name="charcoal", amount=5})
   frep.add_ingredient("artificial-jellynut-soil", {type="item", name="charcoal", amount=5})
-
-  table.insert(data.raw["assembling-machine"]["biochamber"].crafting_categories, "organic-or-kiln-smelting")
 end
 
 -------------------------------------------------------------------------- Air scrubbing

@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.2
+  Bugfixes:
+    - Move all burnt spoilage changes to Alloy Smelting
+
+---------------------------------------------------------------------------------------------------
 Version: 2.0.1
   Compatibility:
     - Update Woodchips icon and localisation to match Crushing Industry when enabled
