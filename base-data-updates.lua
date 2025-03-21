@@ -24,6 +24,10 @@ if mods["space-age"] then
   ftech.add_unlock("space-platform", "reactivated-charcoal")
 end
 
+if mods["crushing-industry"] and settings.startup["crushing-industry-byproducts"].value then
+  frep.add_result("woodchips", {type="item", name="wood", amount=1, probability=0.05, show_details_in_recipe_tooltip=false})
+end
+
 -------------------------------------------------------------------------- Resin
 
 if settings.startup["wood-industry-resin"].value then

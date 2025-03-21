@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.1
+  Compatibility:
+    - Update Woodchips icon and localisation to match Crushing Industry when enabled
+    - Add byproducts to Wood crushing when enabled
+
+---------------------------------------------------------------------------------------------------
 Version: 2.0.0
   Major Features:
     - Kilns have been moved to their own mod, Alloy Smelting, which is now a required dependency

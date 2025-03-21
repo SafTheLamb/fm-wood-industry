@@ -1,6 +1,6 @@
 local carpentry_category = mods["wood-logistics"] and settings.startup["wood-logistics-lumber-mill"].value and "crafting-or-carpentry" or "crafting"
 local crushing_category = mods["crushing-industry"] and "basic-crushing-or-hand-crafting" or carpentry_category
-local coal_item = mods["crushing-industry"] and settings.startup["crushing-industry-coal"].value and "crushed-coal" or "coal"
+local is_crushed_coal_enabled = mods["crushing-industry"] and settings.startup["crushing-industry-coal"].value
 
 local chemistry_category = mods["space-age"] and "organic-or-chemistry" or "chemistry"
 
@@ -8,12 +8,14 @@ data:extend({
   {
     type = "recipe",
     name = "woodchips",
+    icons = mods["crushing-industry"] and CrushingIndustry.make_crushing_icons("wood") or nil,
     category = crushing_category or carpentry_category or nil,
     enabled = false,
     allow_productivity = true,
     auto_recycle = false,
     ingredients = {{type="item", name="wood", amount=1}},
-    results = {{type="item", name="woodchips", amount=2}}
+    results = {{type="item", name="woodchips", amount=2}},
+    main_product = "woodchips"
   },
   {
     type = "recipe",
@@ -40,7 +42,7 @@ if settings.startup["wood-industry-resin"].value then
       energy_required = 1,
       ingredients = {
         {type="item", name="wood", amount=3},
-        mods["crushing-industry"] and settings.startup["crushing-industry-coal"].value and {type="item", name="crushed-coal", amount=2} or {type="item", name="coal", amount=1},
+        is_crushed_coal_enabled and {type="item", name="crushed-coal", amount=2} or {type="item", name="coal", amount=1},
         {type="fluid", name="steam", amount=50}
       },
       results = {{type="item", name="resin", amount=2}}
