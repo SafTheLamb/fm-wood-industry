@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.3
+  Compatibility:
+    - Woodchips now always have wood as a byproduct
+
+---------------------------------------------------------------------------------------------------
 Version: 2.0.2
   Bugfixes:
     - Move all burnt spoilage changes to Alloy Smelting

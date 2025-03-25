@@ -14,7 +14,10 @@ data:extend({
     allow_productivity = true,
     auto_recycle = false,
     ingredients = {{type="item", name="wood", amount=1}},
-    results = {{type="item", name="woodchips", amount=2}},
+    results = {
+      {type="item", name="wood", amount=1, probability=0.05, ignored_by_stats=1, ignored_by_productivity=1, show_details_in_recipe_tooltip=false},
+      {type="item", name="woodchips", amount=2}
+    },
     main_product = "woodchips"
   },
   {
