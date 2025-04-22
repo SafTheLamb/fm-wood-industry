@@ -81,8 +81,7 @@ if mods["space-age"] then
     {
       type = "recipe",
       name = "reactivated-charcoal",
-      icon = mods["wood-universe-assets"] and "__wood-universe-assets__/graphics/icons/reactivated-charcoal.png",
-      icons = not mods["wood-universe-assets"] and {
+      icons = {
         {icon="__wood-industry__/graphics/icons/charcoal.png"},
         {icon="__space-age__/graphics/icons/carbon.png", shift={-8,-8}, scale=0.3}
       } or nil,
