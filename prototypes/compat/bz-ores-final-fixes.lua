@@ -1,5 +1,3 @@
-local frep = require("__fdsl__.lib.recipe")
-
 if data.raw["recipe-category"]["basic-crushing"] and not data.raw["recipe-category"]["basic-crushing-or-crafting"] then
   data:extend({
     {
@@ -7,9 +5,7 @@ if data.raw["recipe-category"]["basic-crushing"] and not data.raw["recipe-catego
       name = "basic-crushing-or-crafting"
     }
   })
-end
 
-if data.raw["recipe-category"]["basic-crushing-or-crafting"] then
   table.insert(data.raw.character.character.crafting_categories, "basic-crushing-or-crafting")
   for _,entity_type in pairs({"assembling-machine", "furnace"}) do
     for _,machine in pairs(data.raw[entity_type]) do
@@ -20,11 +16,5 @@ if data.raw["recipe-category"]["basic-crushing-or-crafting"] then
         end
       end
     end
-  end
-end
-
-if settings.startup["wood-industry-lubricant"].value then
-  if mods["aai-loaders"] and data.raw.recipe["lubricant-from-crude-oil"] then
-    frep.add_ingredient("lubricant-from-crude-oil", {type="item", name="charcoal", amount=1})
   end
 end

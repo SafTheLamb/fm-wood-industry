@@ -1,5 +1,4 @@
 local frep = require("__fdsl__.lib.recipe")
-local ftech = require("__fdsl__.lib.technology")
 
 -------------------------------------------------------------------------- Wood changes
 
@@ -9,19 +8,6 @@ if settings.startup["wood-industry-nerf-wood-fuel"].value then
   if mods["wood-logistics"] and settings.startup["wood-logistics-lumber"].value then
     data.raw.item["lumber"].fuel_value = "2MJ"
   end
-end
-
--------------------------------------------------------------------------- Woodchips & charcoal
-
-ftech.add_unlock("kiln-smelting", "woodchips")
-ftech.add_unlock("kiln-smelting", "charcoal")
-
-if settings.startup["alloy-smelting-coke"].value then
-  ftech.add_unlock("kiln-smelting", "coke-from-charcoal")
-end
-
-if mods["space-age"] then
-  ftech.add_unlock("space-platform", "reactivated-charcoal")
 end
 
 -------------------------------------------------------------------------- Resin
@@ -50,32 +36,11 @@ end
 
 -------------------------------------------------------------------------- Oil processing
 
-if settings.startup["wood-industry-heavy-oil-adsorption"].value then
-  ftech.add_unlock("advanced-oil-processing", "heavy-oil-adsorption")
-end
-
 if settings.startup["wood-industry-lubricant"].value then
   frep.add_ingredient("lubricant", {type="item", name="charcoal", amount=1})
 
   if mods["space-age"] then
     frep.add_ingredient("biolubricant", {type="item", name="charcoal", amount=1})
-  end
-end
-
--------------------------------------------------------------------------- Resin
-
-if settings.startup["wood-industry-resin"].value then
-  ftech.add_unlock("advanced-oil-processing", "synthetic-resin")
-
-  if not (mods["any-planet-start"] and settings.startup["aps-planet"].value == "fulgora") then
-    ftech.add_prereq("plastics", "resin-processing")
-  end
-
-  if mods["early-agriculture"] then
-    ftech.add_prereq("resin-processing", "basic-agriculture")
-  end
-  if mods["aai-industry"] then
-    ftech.add_prereq("resin-processing", "steam-power")
   end
 end
 
@@ -105,16 +70,10 @@ end
 
 -------------------------------------------------------------------------- Air scrubbing
 
-if mods["atan-air-scrubbing"] and mods["space-age"] then
+if mods["atan-air-scrubbing"] then
   local filter_ingredient = "coal"
   if mods["space-age"] then
     filter_ingredient = "carbon"
-    ftech.add_prereq("atan-pollution-scrubbing", "space-science-pack")
-    ftech.remove_prereq("atan-pollution-scrubbing", "space-platform")
-    ftech.add_cost_ingredient("atan-pollution-scrubbing", "space-science-pack")
-
-    ftech.add_prereq("atan-spore-scrubbing", "carbon-fiber")
-    ftech.add_cost_ingredient("atan-spore-scrubbing", "space-science-pack")
     frep.replace_ingredient("atan-spore-filter", "plastic-bar", "carbon-fiber")
     frep.replace_ingredient("atan-spore-filter", filter_ingredient, {type="item", name="charcoal", amount=5})
     frep.add_ingredient("atan-spore-filter-cleaning", {type="item", name="charcoal", amount=5})

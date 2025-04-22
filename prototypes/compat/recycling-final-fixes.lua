@@ -1,5 +1,3 @@
-local frep = require("__fdsl__.lib.recipe")
-
 if mods["quality"] then
   if data.raw.recipe["wood-recycling"] then
     data.raw.recipe["wood-recycling"].energy_required = 0.5/16

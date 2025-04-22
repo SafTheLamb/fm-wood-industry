@@ -33,6 +33,8 @@ data:extend({
   },
 })
 
+-------------------------------------------------------------------------- Resin
+
 if settings.startup["wood-industry-resin"].value then
   data:extend({
     {
@@ -55,7 +57,7 @@ if settings.startup["wood-industry-resin"].value then
       name = "synthetic-resin",
       localised_name = {"recipe-name.synthetic-resin"},
       icons = {
-        {icon="__wood-base-assets__/graphics/icons/resin.png"},
+        {icon="__wood-industry__/graphics/icons/resin.png"},
         {icon="__base__/graphics/icons/fluid/sulfuric-acid.png", shift={-8,-8}, scale=0.3}
       },
       category = mods["space-age"] and "chemistry-or-cryogenics" or "chemistry",
@@ -81,7 +83,7 @@ if mods["space-age"] then
       name = "reactivated-charcoal",
       icon = mods["wood-universe-assets"] and "__wood-universe-assets__/graphics/icons/reactivated-charcoal.png",
       icons = not mods["wood-universe-assets"] and {
-        {icon="__wood-base-assets__/graphics/icons/charcoal.png"},
+        {icon="__wood-industry__/graphics/icons/charcoal.png"},
         {icon="__space-age__/graphics/icons/carbon.png", shift={-8,-8}, scale=0.3}
       } or nil,
       category = "organic-or-chemistry",
@@ -101,12 +103,14 @@ if mods["space-age"] then
   })
 end
 
+-------------------------------------------------------------------------- Heavy oil adsorption
+
 if settings.startup["wood-industry-heavy-oil-adsorption"].value then
   data:extend({
     {
       type = "recipe",
       name = "heavy-oil-adsorption",
-      icon = "__wood-base-assets__/graphics/icons/fluid/heavy-oil-adsorption.png",
+      icon = "__wood-industry__/graphics/icons/fluid/heavy-oil-adsorption.png",
       category = chemistry_category,
       subgroup = "fluid-recipes",
       order = "b[fluid-chemistry]-a[heavy-oil-cracking]b",
@@ -132,13 +136,15 @@ if settings.startup["wood-industry-heavy-oil-adsorption"].value then
   })
 end
 
+-------------------------------------------------------------------------- Crushing Industry
+
 if settings.startup["alloy-smelting-coke"].value then
   data:extend({
     {
       type = "recipe",
       name = "coke-from-charcoal",
       icons = {
-        {icon="__wood-base-assets__/graphics/icons/charcoal.png", shift={-12, -12}, scale=0.4},
+        {icon="__wood-industry__/graphics/icons/charcoal.png", shift={-12, -12}, scale=0.4},
         {icon="__alloy-smelting__/graphics/icons/coke.png", draw_background=true}
       },
       category = "organic-or-kiln-smelting",

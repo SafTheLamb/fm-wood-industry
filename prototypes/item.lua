@@ -4,13 +4,13 @@ data:extend({
   {
     type = "item",
     name = "woodchips",
-    icon = "__wood-base-assets__/graphics/icons/woodchips.png",
+    icon = "__wood-industry__/graphics/icons/woodchips.png",
     icon_size = 64,
     pictures = {
-      {size=64, filename="__wood-base-assets__/graphics/icons/woodchips.png", scale=0.5, mipmap_count=4},
-      {size=64, filename="__wood-base-assets__/graphics/icons/woodchips-1.png", scale=0.5, mipmap_count=4},
-      {size=64, filename="__wood-base-assets__/graphics/icons/woodchips-2.png", scale=0.5, mipmap_count=4},
-      {size=64, filename="__wood-base-assets__/graphics/icons/woodchips-3.png", scale=0.5, mipmap_count=4}
+      {size=64, filename="__wood-industry__/graphics/icons/woodchips.png", scale=0.5, mipmap_count=4},
+      {size=64, filename="__wood-industry__/graphics/icons/woodchips-1.png", scale=0.5, mipmap_count=4},
+      {size=64, filename="__wood-industry__/graphics/icons/woodchips-2.png", scale=0.5, mipmap_count=4},
+      {size=64, filename="__wood-industry__/graphics/icons/woodchips-3.png", scale=0.5, mipmap_count=4}
     },
     fuel_category = "chemical",
     fuel_value = "1MJ",
@@ -25,13 +25,13 @@ data:extend({
   {
     type = "item",
     name = "charcoal",
-    icon = "__wood-base-assets__/graphics/icons/charcoal.png",
+    icon = "__wood-industry__/graphics/icons/charcoal.png",
     icon_size = 64,
     pictures = {
-      {size=64, filename="__wood-base-assets__/graphics/icons/charcoal.png", scale=0.5, mipmap_count=4},
-      {size=64, filename="__wood-base-assets__/graphics/icons/charcoal-1.png", scale=0.5, mipmap_count=4},
-      {size=64, filename="__wood-base-assets__/graphics/icons/charcoal-2.png", scale=0.5, mipmap_count=4},
-      {size=64, filename="__wood-base-assets__/graphics/icons/charcoal-3.png", scale=0.5, mipmap_count=4}
+      {size=64, filename="__wood-industry__/graphics/icons/charcoal.png", scale=0.5, mipmap_count=4},
+      {size=64, filename="__wood-industry__/graphics/icons/charcoal-1.png", scale=0.5, mipmap_count=4},
+      {size=64, filename="__wood-industry__/graphics/icons/charcoal-2.png", scale=0.5, mipmap_count=4},
+      {size=64, filename="__wood-industry__/graphics/icons/charcoal-3.png", scale=0.5, mipmap_count=4}
     },
     fuel_category = "chemical",
     fuel_value = "3MJ",
@@ -51,7 +51,7 @@ if settings.startup["wood-industry-resin"].value then
     {
       type = "item",
       name = "resin",
-      icon = "__wood-base-assets__/graphics/icons/resin.png",
+      icon = "__wood-industry__/graphics/icons/resin.png",
       icon_size = 64,
       subgroup = "raw-material",
       order = "b[chemistry]-a[resin]",

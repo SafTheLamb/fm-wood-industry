@@ -1,2 +1,3 @@
-require("prototypes.recipe-updates")
-require("prototypes.recycling-updates")
+require("prototypes.technology-updates")
+
+require("prototypes.compat.aai-industry-updates")
