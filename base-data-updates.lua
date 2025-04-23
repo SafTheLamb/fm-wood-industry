@@ -47,9 +47,7 @@ end
 -------------------------------------------------------------------------- Vulcanus
 
 if mods["space-age"] then
-  if not (mods["alloy-smelting"] and settings.startup["alloy-smelting-coke"].value) then
-    frep.add_ingredient("carbon", {type="item", name="charcoal", amount=1})
-  end
+  frep.add_ingredient("carbon", {type="item", name="charcoal", amount=1})
 
   data.raw.tree["ashland-lichen-tree-flaming"].minable.results = {
     {type="item", name="charcoal", amount=5},
