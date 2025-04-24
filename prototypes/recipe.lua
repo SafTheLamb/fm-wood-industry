@@ -82,8 +82,8 @@ if mods["space-age"] then
       type = "recipe",
       name = "reactivated-charcoal",
       icons = {
-        {icon="__wood-industry__/graphics/icons/charcoal.png"},
-        {icon="__space-age__/graphics/icons/carbon.png", shift={-8,-8}, scale=0.3}
+        {icon="__space-age__/graphics/icons/coal-synthesis.png"},
+        {icon="__wood-industry__/graphics/icons/charcoal.png", scale=0.4},
       } or nil,
       category = "organic-or-chemistry",
       subgroup = "raw-material",
@@ -147,6 +147,7 @@ if settings.startup["alloy-smelting-coke"].value then
         {icon="__alloy-smelting__/graphics/icons/coke.png", draw_background=true}
       },
       category = "organic-or-kiln-smelting",
+      order = "b[chemistry]-A[coke]-c[charcoal]",
       enabled = false,
       allow_productivity = true,
       auto_recycle = false,
