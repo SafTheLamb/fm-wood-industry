@@ -76,6 +76,31 @@ if settings.startup["wood-industry-resin"].value then
       results = {{type="item", name="resin", amount=2}}
     }
   })
+  if mods["space-age"] then
+    data:extend({
+      {
+        type = "recipe",
+        name = "resin-from-yumako-mash",
+        localised_name = {"recipe-name.resin-from-yumako-mash"},
+        icons = {
+          {icon="__wood-industry__/graphics/icons/resin.png"},
+          {icon="__space-age__/graphics/icons/yumako-mash.png", shift={-8,-8}, scale=0.3, draw_background=true},
+        },
+        category = "organic-or-chemistry",
+        subgroup = "agriculture-products",
+        order = "a[organic-products]-c[bioresin]",
+        enabled = false,
+        allow_productivity = true,
+        auto_recycle = false,
+        ingredients = {
+          {type="item", name="yumako-mash", amount=4},
+          mods["crushing-industry"] and {type="item", name="sand", amount=2} or {type="item", name="stone", amount=1},
+          {type="fluid", name="steam", amount=100},
+        },
+        results = {{type="item", name="resin", amount=3}}
+      }
+    })
+  end
 end
 
 if mods["space-age"] then
