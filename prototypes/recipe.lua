@@ -1,6 +1,7 @@
 local carpentry_category = mods["wood-logistics"] and settings.startup["wood-logistics-lumber-mill"].value and "crafting-or-carpentry" or "crafting"
 local crushing_category = mods["crushing-industry"] and "basic-crushing-or-hand-crafting" or carpentry_category
 local is_crushed_coal_enabled = mods["crushing-industry"] and settings.startup["crushing-industry-coal"].value
+local is_coke_enabled = settings.startup["alloy-smelting-coke"].value
 
 local chemistry_category = mods["space-age"] and "organic-or-chemistry" or "chemistry"
 
@@ -36,6 +37,7 @@ data:extend({
 -------------------------------------------------------------------------- Resin
 
 if settings.startup["wood-industry-resin"].value then
+  local resin_catalyst = is_coke_enabled and "coke" or is_crushed_coal_enabled and "crushed-coal" or "coal"
   data:extend({
     {
       type = "recipe",
@@ -47,7 +49,7 @@ if settings.startup["wood-industry-resin"].value then
       energy_required = 1,
       ingredients = {
         {type="item", name="wood", amount=3},
-        is_crushed_coal_enabled and {type="item", name="crushed-coal", amount=2} or {type="item", name="coal", amount=1},
+        {type="item", name=resin_catalyst, amount=1},
         {type="fluid", name="steam", amount=50}
       },
       results = {{type="item", name="resin", amount=2}}
