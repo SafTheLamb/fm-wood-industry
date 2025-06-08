@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.1
-Date: ????
+Date: 2025-06-08
   Changes:
     - Change resin to use coke instead of coal when enabled from Alloy Smelting
     - Add recipe for resin from yumako mash on Gleba
