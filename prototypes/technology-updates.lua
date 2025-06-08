@@ -42,6 +42,10 @@ if settings.startup["wood-industry-resin"].value then
   if mods["aai-industry"] and starting_planet ~= "vulcanus" then
     ftech.add_prereq("resin-processing", "steam-power")
   end
+
+  if mods["space-age"] then
+    ftech.add_unlock("bioflux-processing", "resin-from-yumako-mash")
+  end
 end
 
 -------------------------------------------------------------------------- Air scrubbing

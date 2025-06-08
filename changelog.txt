@@ -2,6 +2,7 @@
 Version: 2.1.2
 Date: ????
   Changes:
+    - Add missing unlock for Resin from yumako mash
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.1
 Date: 2025-06-08
