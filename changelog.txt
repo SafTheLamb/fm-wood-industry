@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.4
 Date: ????
-  Changes:
+  Compatibility:
+    - Scrappy Chemistry: Plastic bar from butane now uses resin when enabled
+    - Scrappy Chemistry: Heavy oil adsorption yields butane instead of petroleum gas
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.3
 Date: 2025-10-24
