@@ -5,4 +5,5 @@ require("prototypes.technology")
 require("base-data-updates")
 
 require("prototypes.compat.scrap-industry")
+require("prototypes.compat.scrap-chemistry")
 require("prototypes.compat.voidcraft")

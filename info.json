@@ -17,6 +17,7 @@
     "? space-age",
     "? wood-logistics >= 2.2.0",
     "? scrap-industry >= 0.8.1",
+    "? scrap-chemistry",
     "? early-agriculture",
     "(?) Voidcraft >= 1.4",
     "(?) bztin",
