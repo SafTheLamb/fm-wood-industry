@@ -9,6 +9,8 @@ if mods["scrap-chemistry"] then
 	if settings.startup["wood-industry-heavy-oil-adsorption"].value then
 		data.raw.recipe["heavy-oil-adsorption"].localised_name = {"recipe-name.heavy-oil-adsorption-butane"}
 		data.raw.recipe["heavy-oil-adsorption"].icon = "__wood-industry__/graphics/icons/fluid/heavy-oil-adsorption-butane.png"
+		data.raw.recipe["heavy-oil-adsorption"].order = "b[fluid-chemistry]-c[more]-A[heavy-oil-adsorption]"
+		frep.replace_result("heavy-oil-adsorption", "petroleum-gas", "butane")
 		frep.add_result("heavy-oil-adsorption", {type="fluid", name="sour-gas", amount=30})
 	end
 end
