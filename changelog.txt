@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.6
 Date: ????
-  Changes:
+  Compatibility:
+    - Scrappy Chemistry: Add tar byproduct to "coke from charcoal" when enabled with Alloy Smelting
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.5
 Date: 2025-12-23

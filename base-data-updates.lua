@@ -44,6 +44,10 @@ if settings.startup["wood-industry-lubricant"].value then
   end
 end
 
+if mods["scrap-chemistry"] and settings.startup["alloy-smelting-coke-tar"].value then
+  frep.add_result("coke-from-charcoal", {type="item", name="tar", amount=1, probability=0.05})
+end
+
 -------------------------------------------------------------------------- Vulcanus
 
 if mods["space-age"] then
