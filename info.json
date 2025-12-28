@@ -12,7 +12,7 @@
   "dependencies": [
     "base >= 2.0.7",
     "fdsl >= 0.1.8",
-    "alloy-smelting",
+    "alloy-smelting >= 0.6.0",
     "? crushing-industry >= 0.1.4",
     "? space-age",
     "? wood-logistics >= 2.2.0",
