@@ -12,7 +12,7 @@ if mods["quality"] then
         local result_scalar = wood_ratios[result.name]
         if result_scalar then
           result.name = "woodchips"
-          local amount = result_scalar * (result.amount - result.amount % 1 + result.extra_count_fraction)
+          local amount = result_scalar * (result.amount - result.amount % 1 + (result.extra_count_fraction or 0.0))
           result.amount = amount
           result.extra_count_fraction = amount % 1
         end
