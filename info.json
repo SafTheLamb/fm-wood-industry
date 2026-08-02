@@ -1,33 +1,33 @@
 {
-  "name": "wood-industry",
-  "title": "Wooden Industry",
-  "description": "Adds uses for wood like charcoal, resin, and a steel catalyst",
-  "author": "SafTheLamb",
-  "version": "2.1.9",
-  "factorio_version": "2.0",
-  "homepage": "https://github.com/sapphiriza/wood-military",
-  "package": {
-    "ignore": ["thumbnail.afphoto", "thumbnail.pdn", "**/*.afphoto", "**/*.ase", "**/*.afphoto~lock~", "**/*.pdn"]
-  },
-  "dependencies": [
-    "base >= 2.0.7",
-    "fdsl >= 0.1.8",
-    "alloy-smelting >= 0.6.0",
-    "? crushing-industry >= 0.1.4",
-    "? space-age",
-    "? wood-logistics >= 2.2.0",
-    "? scrap-industry >= 0.8.1",
-    "? scrap-chemistry",
-    "? early-agriculture",
-    "(?) Voidcraft >= 1.4",
-    "(?) bztin",
-    "(?) bzlead",
-    "(?) bztitanium",
-    "(?) simply-greenhouse",
-    "(?) atan-air-scrubbing",
-    "(?) quality",
-    "(?) aai-industry",
-    "(?) aai-loaders",
-    "(?) deadlock-beltboxes-loaders"
-  ]
+	"name": "wood-industry",
+	"title": "Wooden Industry",
+	"description": "Adds uses for wood like charcoal, resin, and a steel catalyst",
+	"author": "SafTheLamb",
+	"version": "2.2.0",
+	"factorio_version": "2.1",
+	"homepage": "https://github.com/sapphiriza/wood-military",
+	"package": {
+		"ignore": ["thumbnail.afphoto", "thumbnail.pdn", "**/*.afphoto", "**/*.ase", "**/*.afphoto~lock~", "**/*.pdn"]
+	},
+	"dependencies": [
+		"base >= 2.1.7",
+		"fdsl >= 0.4.0",
+		"alloy-smelting >= 0.6.0",
+		"? crushing-industry >= 0.1.4",
+		"? space-age",
+		"? wood-logistics >= 2.2.0",
+		"? scrap-industry >= 0.8.1",
+		"? scrap-chemistry",
+		"? early-agriculture",
+		"(?) Voidcraft >= 1.4",
+		"(?) bztin",
+		"(?) bzlead",
+		"(?) bztitanium",
+		"(?) simply-greenhouse",
+		"(?) atan-air-scrubbing",
+		"(?) quality",
+		"(?) aai-industry",
+		"(?) aai-loaders",
+		"(?) deadlock-beltboxes-loaders"
+	]
 }
