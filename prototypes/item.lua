@@ -12,7 +12,7 @@ data:extend({
       {size=64, filename="__wood-industry__/graphics/icons/woodchips-2.png", scale=0.5, mipmap_count=4},
       {size=64, filename="__wood-industry__/graphics/icons/woodchips-3.png", scale=0.5, mipmap_count=4}
     },
-    fuel_category = "chemical",
+    fuel_categories = {"chemical"},
     fuel_value = "1MJ",
     subgroup = "raw-resource",
     order = "a[wood]-c[chips]",
@@ -33,7 +33,7 @@ data:extend({
       {size=64, filename="__wood-industry__/graphics/icons/charcoal-2.png", scale=0.5, mipmap_count=4},
       {size=64, filename="__wood-industry__/graphics/icons/charcoal-3.png", scale=0.5, mipmap_count=4}
     },
-    fuel_category = "chemical",
+    fuel_categories = {"chemical"},
     fuel_value = "3MJ",
     fuel_emissions_multiplier = 0.75,
     subgroup = "raw-material",
@@ -58,7 +58,7 @@ if settings.startup["wood-industry-resin"].value then
       inventory_move_sound = item_sounds.sulfur_inventory_move,
       pick_sound = item_sounds.resource_inventory_pickup,
       drop_sound = item_sounds.sulfur_inventory_move,
-      fuel_category = "chemical",
+      fuel_categories = {"chemical"},
       fuel_value = "2MJ",
       fuel_emissions_multiplier = 2,
       stack_size = 50,
