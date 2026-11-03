@@ -181,7 +181,7 @@ if settings.startup["alloy-smelting-coke"].value then
 				{icon="__wood-industry__/graphics/icons/charcoal.png", shift={-12, -12}, scale=0.4},
 				{icon="__alloy-smelting__/graphics/icons/coke.png", draw_background=true}
 			},
-			categories = {"kiln-smelting", "organic"},
+			categories = mods["space-age"] and {"kiln-smelting", "organic"} or {"kiln-smelting"},
 			order = "b[chemistry]-A[coke]-c[charcoal]",
 			enabled = false,
 			allow_productivity = true,

@@ -2,6 +2,7 @@
 Version: 2.2.4
 Date: ????
   Changes:
+    - Fix crash when space-age is not installed
 ---------------------------------------------------------------------------------------------------
 Version: 2.2.3
 Date: 2026-11-02
