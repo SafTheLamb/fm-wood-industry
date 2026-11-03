@@ -1,3 +1,5 @@
+local frep = require("__fdsl__.lib.recipe")
+
 if mods["quality"] then
 	if data.raw.recipe["wood-recycling"] then
 		data.raw.recipe["wood-recycling"].energy_required = 0.5/16
@@ -7,7 +9,7 @@ if mods["quality"] then
 	-- Replace wood results in recycling recipes with woodchips
 	local wood_ratios = {["wood"]=1.5}
 	for name,recipe in pairs(data.raw.recipe) do
-		if recipe.category == "recycling" and name ~= "wood-recycling" and name ~= "woodchips-recycling" then
+		if frep.has_category(recipe, "recycling") and name ~= "wood-recycling" and name ~= "woodchips-recycling" then
 			for _,result in pairs(recipe.results) do
 				local result_scalar = wood_ratios[result.name]
 				if result_scalar then

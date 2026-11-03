@@ -2,6 +2,7 @@
 Version: 2.2.3
 Date: ????
   Changes:
+    - Fix wood not recycling into woodchips after 2.1 changes
 ---------------------------------------------------------------------------------------------------
 Version: 2.2.2
 Date: 2026-11-02
